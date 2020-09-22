@@ -7,6 +7,14 @@ class LoginForm extends React.Component {
             username_or_email: "",
             password: "",
         }
+
+        this.update = this.update.bind(this); 
+        this.renderErrors = this.renderErrors.bind(this); 
+        this.handleSubmit = this.handleSubmit.bind(this); 
+    }
+
+    handleSubmit() {
+        this.props.processForm(this.state); 
     }
 
     update(field) {
@@ -28,33 +36,33 @@ class LoginForm extends React.Component {
     }
 
     render() {
+        return(
         <div>
             <h1>Bandcamp</h1>
             <h2>{this.props.formType}</h2>
             <form onSubmit={this.handleSubmit}>
-                <label>Email address
+                <label>Username / email
                     <input
                         type="text"
                         value={this.state.email}
-                        onChange={this.update(field)}>
+                        onChange={this.update('username_or_email')}>
                     </input>
                 </label>
+                <br></br>
                 <label>Password
                     <input
-                        type="text"
+                        type="password"
                         value={this.state.password}
-                        onChange={this.update(field)}>
+                        onChange={this.update('password')}>
                     </input>
                 </label>
-                <label>Username
-                    <input
-                        type="text"
-                        value={this.state.username}>
-                    </input>
-                </label>
+                <br></br>
+                <input type="submit" value="Submit"></input>
             </form>
+            <p>Don't have an account? Sign up { this.props.navLink }</p>
         </div>
+        )
     }
 }
 
-export default Login
+export default LoginForm; 

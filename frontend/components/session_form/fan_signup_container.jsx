@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import React from 'react';
 import { signup } from '../../actions/session_actions';
 import SignupForm from "./sign_up";
@@ -6,7 +7,7 @@ import SignupForm from "./sign_up";
 const mapStateToProps = ({ errors }) => {
     return {
         errors: errors.session,
-        formType: 'Sign up for a Bandcamp fan account',
+        formType: 'a fan',
         navLink: <Link to="/login">Log in.</Link>
     }
 };

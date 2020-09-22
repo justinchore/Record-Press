@@ -1,5 +1,4 @@
 import { connect } from 'react-redux'; 
-
 import { logout } from '../../actions/session_actions';
 import UserAuth from './user_auth'; 
 
@@ -13,4 +12,4 @@ const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(logout)
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserAuth)
+export default connect(mapStateToProps, mapDispatchToProps)(UserAuth);
