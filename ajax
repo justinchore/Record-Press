@@ -1,0 +1,15 @@
+$.ajax({
+    method: "POST", 
+    url: "/api/user", 
+    data: {user: {username: "goodtime",
+                 password: "Hunter",
+                 email: "test@test.com",
+                 is_artist: false,
+                 location: "New York" 
+                 }}
+})
+
+login({username: "goodtime",
+                 password: "Hunter",
+                 email: "test@test.com",
+                 location: "New York" })
