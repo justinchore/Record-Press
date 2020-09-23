@@ -1,17 +1,31 @@
-import React from 'react'
-import { Route,  } from 'react-router-dom';
+import React from 'react';
+import { Provider } from 'react-redux';
+import {
+    Route,
+    Redirect,
+    Switch,
+    Link,
+    HashRouter
+} from 'react-router-dom';
 
-import FanSignupContainer from "./session_form/fan_signup_container"; 
+import SignupContainer from "./session_form/signup_container"; 
 import LoginContainer from "./session_form/login_container"; 
-import UserAuthContainer from "./main_nav_bar/user_auth_container"; 
+import GreetingContainer from './greeting/greeting_container'; 
+import { AuthRoute } from "../util/route_util"; 
 
-const App = () =>  (
+
+const HIDDEN_SIGNUP = {
+    display: 'none'
+}
+
+const App = () =>  {
+    return (
     <div>
-        <h1>Record Press</h1>
-        < UserAuthContainer/>
-        <Route path="/login" component={ LoginContainer } /> 
-        <Route path="/signup" component={ FanSignupContainer }/> 
+         <AuthRoute exact path = "/" component= {GreetingContainer} />
+        <AuthRoute exact path="/login" component={ LoginContainer } /> 
+            <div style={HIDDEN_SIGNUP}><AuthRoute exact path="/signup" component={SignupContainer} /></div>
     </div>
-)
+    )
+}
 
 export default App; 

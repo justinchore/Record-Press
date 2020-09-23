@@ -13,3 +13,73 @@
  *= require_tree .
  *= require_self
  */
+
+  html, body, div, p, span, h1, h2, h3, h4, a, ol, ul, li, form, label, article, aside, figure, figcaption, footer, header, main, nav {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 12px;
+   vertical-align: baseline;
+ }
+
+ .login-page {
+     background: #F3F3F3;
+ }
+
+ .login-banner {
+     height: 102px;
+     background: #DDDDDD
+ }
+
+
+.login-form {
+    box-sizing: border-box; 
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 100%;
+    background: #F3F3F3;
+
+}
+
+
+.login-form h1 {
+    top: 50%;
+    background: green;
+    line-height: 105px;
+    font-size: 18px;
+}
+
+.login-input-wrap-1 {
+    box-sizing: border-box;
+    height: 65px;
+    line-height: 65px;
+    margin-top: 20px;
+}
+
+.login-input-wrap {
+    box-sizing: border-box;
+    height: 20px;
+    line-height: 20px;
+}
+
+.login-field {
+    font-size: 16px;
+    align-items: center;
+    width: 250px;
+    height: 19px;
+}
+
+
+.login-form label {
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.login-button {
+
+}
+
+.login-form p {
+
+}
+

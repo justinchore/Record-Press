@@ -1,5 +1,48 @@
 import React from 'react';
 
+// const FORM_STYLE = {
+//     width: '100%',
+//     backgroundColor: '#f3f3f3',
+//     position: 'fixed', 
+//     paddingBottom: '200px',
+//     zIndex: '100000000002',
+//     textAlign: "center", 
+//     borderTop: "2px solid black",
+//     paddingTop: '50px',
+//     fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+//     fontSize: '18px',
+// }
+
+// const LABEL_INPUT_STYLE = {
+//     display: 'table-row',
+//     textAlign: 'center'
+// }
+
+// const LABEL_STYLE = {
+    
+// }
+
+// const INPUT_STYLE = {
+//     padding: '5px',
+//     margin: '10px',
+//     border: '2px solid light-grey', 
+//     width: '300px',
+//     height: '20px',
+// }
+
+// const BUTTON_STYLE = {
+//     background: "#00a1c6",
+//     height: '35px',
+//     width: '250px' ,
+//     color: 'white'
+// }
+
+// const FORM_HEADER = {
+//     fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+//     fontSize: '18px',
+//     paddingBottom: '35px'
+// }
+
 class LoginForm extends React.Component {
     constructor(props) {
         super(props);
@@ -37,29 +80,36 @@ class LoginForm extends React.Component {
 
     render() {
         return(
-        <div>
-            <h1>Bandcamp</h1>
-            <h2>{this.props.formType}</h2>
-            <form onSubmit={this.handleSubmit}>
-                <label>Username / email
+            <div className ='login-page'>
+            <div className ="login-banner">Banner</div>
+                <div className="login-form">
+        
+                <form onSubmit={this.handleSubmit}>
+                    <h1>{this.props.formType}</h1>
+                    <div className="login-input-wrap-1">
+                    <label>Username / email</label>
                     <input
+                        className="login-field"
                         type="text"
                         value={this.state.email}
                         onChange={this.update('username_or_email')}>
                     </input>
-                </label>
-                <br></br>
-                <label>Password
+                    </div>
+                    <br></br>
+                    <div className="login-input-wrap">
+                    <label>Password </label>
                     <input
+                        className="login-field"
                         type="password"
                         value={this.state.password}
                         onChange={this.update('password')}>
                     </input>
-                </label>
+                    </div>
                 <br></br>
-                <input type="submit" value="Submit"></input>
+                <input type="submit" className="login-button" value="Log In"></input>
             </form>
             <p>Don't have an account? Sign up { this.props.navLink }</p>
+        </div>
         </div>
         )
     }
