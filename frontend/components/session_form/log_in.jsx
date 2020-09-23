@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Modal from '../modal';
 
 // const FORM_STYLE = {
 //     width: '100%',
@@ -78,7 +79,19 @@ class LoginForm extends React.Component {
         );
     }
 
+    signupModal() {
+        const [isOpen, setIsOpen] = useState(false);
+        return (
+            <>
+                <Link onClick={() => setIsOpen(true)} to="/signup">here</Link>
+                <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+                    <SignupContainer />
+                </Modal>
+            </>
+        )
+    }
     render() {
+    
         return(
             <div className ='login-page'>
             <div className ="login-banner">Banner</div>
@@ -86,7 +99,7 @@ class LoginForm extends React.Component {
         
                 <form onSubmit={this.handleSubmit}>
                     <h1>{this.props.formType}</h1>
-                    <div className="login-input-wrap-1">
+                    <div className="login-input-wrap">
                     <label>Username / email</label>
                     <input
                         className="login-field"
@@ -108,7 +121,7 @@ class LoginForm extends React.Component {
                 <br></br>
                 <input type="submit" className="login-button" value="Log In"></input>
             </form>
-            <p>Don't have an account? Sign up { this.props.navLink }</p>
+                    <p>Don't have an account? Sign up {this.props.navLink}</p>
         </div>
         </div>
         )

@@ -1,18 +1,16 @@
-import React, { useState } from 'react'; 
-import ReactDom from 'react-dom'; 
-import { AuthRoute } from '../util/route_util';
-import SignupContainer from "./session_form/signup_container";
+import React from 'react'; 
+import ReactDom from 'react-dom';
 
 const MODAL_STYLES = {
     position: 'fixed', 
-    height: 'auto',
-    width: '500px', 
-    top: '307px', 
-    left: '500px',
-    backgroundColor: '#FFF', 
-    tranform: 'translate(-50%, -50%)',
+    top: '50%',
+    left: '50%',
+    backgroundColor: '#FFF',
+    padding: '50px',
     zIndex: 1000,
-    padding: '25px 10px'
+    left: "50%",
+    top: "50%",
+    transform: 'translate(-50%, -50%)'
 }
 
 const OVERLAY_STYLES = {
@@ -21,22 +19,22 @@ const OVERLAY_STYLES = {
     left: 0, 
     right: 0, 
     bottom: 0, 
-    backgroundColor: 'rgba(0, 0, 0, .7)',
-    zIndex: 1000 
-}
-const Modal = ({ open, children, onClose }) => { 
-    if (!open) return null 
+    backgroundColor: 'rgba(0, 0, 0, .7)', 
+
+ }
+
+const Modal=({open, children, onClose})=>{
+    if (!open) return null;
     return ReactDom.createPortal(
-        <>
-            <div style ={OVERLAY_STYLES}/>
-            <div style={MODAL_STYLES}>
-            <button onClick = {onClose}>X</button>
-            <SignupContainer/>
-            { children }
-            </div>
-        </>,
-        document.getElementById('portal')
+            <>
+            <div className="overlay-styles"/>
+            <div className="signup-modal">
+                <button onClick={onClose}>X</button>
+                 {children}
+             </div>
+    </>,
+    document.getElementById('portal')
     )
-}
+};
 
 export default Modal;

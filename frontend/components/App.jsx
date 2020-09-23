@@ -10,7 +10,7 @@ import {
 
 import SignupContainer from "./session_form/signup_container"; 
 import LoginContainer from "./session_form/login_container"; 
-import GreetingContainer from './greeting/greeting_container'; 
+import NavBarContainer from './nav_bar/nav_bar_container'; 
 import { AuthRoute } from "../util/route_util"; 
 
 
@@ -20,11 +20,12 @@ const HIDDEN_SIGNUP = {
 
 const App = () =>  {
     return (
-    <div>
-         <AuthRoute exact path = "/" component= {GreetingContainer} />
+    <>
+        <NavBarContainer/>
+        {/* <AuthRoute path = "/" component= {NavBarContainer} /> */}
         <AuthRoute exact path="/login" component={ LoginContainer } /> 
-            <div style={HIDDEN_SIGNUP}><AuthRoute exact path="/signup" component={SignupContainer} /></div>
-    </div>
+        <AuthRoute exact path="/signup" className="signup-page" component={SignupContainer} />
+    </>
     )
 }
 

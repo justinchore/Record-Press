@@ -1,4 +1,5 @@
 import React from 'react'; 
+import Modal from '../modal';
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -132,6 +133,7 @@ class SignupForm extends React.Component {
             </form>
                <p>Already have an account? { this.props.navLink }</p>
         </div>
+    
         )
     }
 }
