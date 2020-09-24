@@ -1,40 +1,40 @@
-import React from 'react'; 
-import ReactDom from 'react-dom';
+import React from 'react';
+import { closeModal } from '../actions/modal_actions';
+import { connect } from 'react-redux';
+import SignupFormContainer from '../components/session_form/signup_container';
 
-const MODAL_STYLES = {
-    position: 'fixed', 
-    top: '50%',
-    left: '50%',
-    backgroundColor: '#FFF',
-    padding: '50px',
-    zIndex: 1000,
-    left: "50%",
-    top: "50%",
-    transform: 'translate(-50%, -50%)'
+function Modal({ modal, closeModal }) {
+    if (!modal) {
+        return null;
+    }
+    let component;
+    switch (modal) {
+        case 'signup':
+            component = <SignupFormContainer />;
+            break;
+        default:
+            return null;
+    }
+
+    return (
+        <div className="modal-background" onClick={closeModal}>
+            <div className="modal-child" onClick={e => e.stopPropagation()}>
+                {component}
+            </div>
+        </div>
+    );
 }
 
-const OVERLAY_STYLES = {
-    position: 'fixed', 
-    top: 0, 
-    left: 0, 
-    right: 0, 
-    bottom: 0, 
-    backgroundColor: 'rgba(0, 0, 0, .7)', 
-
- }
-
-const Modal=({open, children, onClose})=>{
-    if (!open) return null;
-    return ReactDom.createPortal(
-            <>
-            <div className="overlay-styles"/>
-            <div className="signup-modal">
-                <button onClick={onClose}>X</button>
-                 {children}
-             </div>
-    </>,
-    document.getElementById('portal')
-    )
+const mapStateToProps = state => {
+    return {
+        modal: state.ui.modal
+    };
 };
 
-export default Modal;
+const mapDispatchToProps = dispatch => {
+    return {
+        closeModal: () => dispatch(closeModal())
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Modal);
