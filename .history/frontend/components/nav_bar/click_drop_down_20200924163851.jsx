@@ -42,7 +42,7 @@ class ClickDropDown extends React.Component {
                         </li>
                         <div className="dropdown-divider"></div>
                         </div>
-                        <div className="dropdown-logout-wrap">
+                        <div>
                         <li className="dropdown-list-item-logout" onClick ={this.props.logout}>
                             log out
                         </li>

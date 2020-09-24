@@ -354,7 +354,7 @@ var ClickDropDown = /*#__PURE__*/function (_React$Component) {
     key: "handleBlur",
     value: function handleBlur(e) {
       this.setState({
-        show: false
+        show: true
       });
     }
   }, {
@@ -386,12 +386,20 @@ var ClickDropDown = /*#__PURE__*/function (_React$Component) {
           overflow: "visible"
         },
         id: "dropdown-items"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown-list-item-first"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "dropdown-list-item"
-      }, "Your Site"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "dropdown-list-item",
+        className: "dropdown-username"
+      }, this.props.currentUser.username), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "dropdown-first-footer"
+      }, "view site"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown-divider"
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown-logout-wrap"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "dropdown-list-item-logout",
         onClick: this.props.logout
-      }, "log out")) : null));
+      }, "log out"))) : null));
     }
   }]);
 
@@ -482,7 +490,7 @@ var NavBars = function NavBars(_ref) {
     }, "log in"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       className: "list-item"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-      className: "signup-button",
+      className: "navbar-signup-button",
       onClick: function onClick() {
         return openModal('signup');
       }

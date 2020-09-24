@@ -66,7 +66,6 @@
     font-size: 15px;
     text-decoration: none;
     color: #333333;
-    width: 236px;
 }
 
 .drpdown {
@@ -78,7 +77,6 @@
   border: none; 
   outline: none; 
   background: none;
-  cursor: pointer
   
 }
 
@@ -93,73 +91,25 @@
 #dropdown-items {
   position:relative;
   display: inline-block;
-  right: 0px;
+  right: 30px;
   background-color: #FFF;
   border: solid 1px #EEEEEE;
   box-shadow: 0px 1px 4px rgba(0,0,0,0.1);
   border-radius: 5%;
   border-radius: 5px;
   font-family: "Helvetica Neue", sans-serif;
-  top: 115%
 }
 
-.dropdown-list-item-first:hover {
-  background-color: #DFDFDF
+.dropdown-list-item {
+  list-style-type: none;
+  width: 200px;
+  font-size: 18px;
+  z-index: 1000;
+  padding: 10px;
 }
 
-.dropdown-logout-wrap:hover {
-  background-color: #DFDFDF
-}
 
-.dropdown-username {
-    width: 200px;
-    font-size: 17px;
-    z-index: 1000;
-    padding: 15px 0px;
-    list-style-type: none;
-    display: flex;
-    margin-left: 23px;
-    font-weight: 600;
-}
-
-.dropdown-first-footer {
-      display: flex;
-    margin-left: 24px;
-    margin-top: -8px;
-}
-
-.dropdown-divider {
-    background-color: #DFDFDF;
-    display: block;
-    padding: 0;
-    height: 1px;
-    margin-top: 30px;
-    width: 75%;
-    margin-left: 26px;
-    margin-bottom: 12px;
-    
-    
-}
-.dropdown-logout-wrap {
-    padding-left: 23px;
-    padding-top: 14px;
-    padding-bottom: 14px;
-}
-
-.dropdown-logout-wrap li {
-    font-size: 16px;
-    display: flex;
-    list-style-type: none;
-}
-  
-
-
-
-
-
-
-
-.navbar-signup-button {
+.signup-button {
     background:none;
     border:none;
     margin:0;

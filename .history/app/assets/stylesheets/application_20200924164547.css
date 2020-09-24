@@ -107,7 +107,7 @@
   background-color: #DFDFDF
 }
 
-.dropdown-logout-wrap:hover {
+.dropdown-list-item-logout:hover {
   background-color: #DFDFDF
 }
 
@@ -133,29 +133,32 @@
     display: block;
     padding: 0;
     height: 1px;
-    margin-top: 30px;
+    margin-top: 27px;
     width: 75%;
     margin-left: 26px;
-    margin-bottom: 12px;
-    
-    
 }
 .dropdown-logout-wrap {
-    padding-left: 23px;
-    padding-top: 14px;
-    padding-bottom: 14px;
+    margin-left: 23px;
+    margin-top: 14px;
+    margin-bottom: 14px;
 }
 
-.dropdown-logout-wrap li {
+.dropdown-list-item-logout {
     font-size: 16px;
     display: flex;
+    /* margin-left: 23px; */
+    /* margin-bottom: 15px; */
+    /* margin-top: 18px; */
     list-style-type: none;
+    /* z-index: 1000; */
+    /* padding-top: 18px; */
+    /* padding-bottom: 15px; */
+    /* top: 18px; */
+    padding-left: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
-  
-
-
-
-
+    
 
 
 

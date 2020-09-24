@@ -40,13 +40,10 @@ class ClickDropDown extends React.Component {
                         <li className= "dropdown-first-footer">
                             view site
                         </li>
-                        <div className="dropdown-divider"></div>
                         </div>
-                        <div className="dropdown-logout-wrap">
                         <li className="dropdown-list-item-logout" onClick ={this.props.logout}>
                             log out
-                        </li>
-                        </div>
+                       </li>
 
                     </ul>
                 ) : null }

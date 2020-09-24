@@ -26,27 +26,18 @@ class ClickDropDown extends React.Component {
                 <button style={{position: 'relative'}} 
                 onBlur={this.handleBlur}
                 onClick={this.handleClick}
-
                     className="dropbtn">♪
                      
                 {this.state.show ? (
                     <ul onClick={e => e.stopPropagation()}
                         style={{ position: 'absolute', top:'100%', overflow:"visible"}}
                         id="dropdown-items">
-                         <div className="dropdown-list-item-first">
-                        <li className= "dropdown-username">
-                            {this.props.currentUser.username}
+                        <li className="dropdown-list-item">
+                            Your Site
                         </li>
-                        <li className= "dropdown-first-footer">
-                            view site
-                        </li>
-                        <div className="dropdown-divider"></div>
-                        </div>
-                        <div className="dropdown-logout-wrap">
-                        <li className="dropdown-list-item-logout" onClick ={this.props.logout}>
+                        <li className="dropdown-list-item" onClick ={this.props.logout}>
                             log out
-                        </li>
-                        </div>
+                       </li>
 
                     </ul>
                 ) : null }

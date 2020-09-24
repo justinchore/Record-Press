@@ -104,11 +104,7 @@
 }
 
 .dropdown-list-item-first:hover {
-  background-color: #DFDFDF
-}
-
-.dropdown-logout-wrap:hover {
-  background-color: #DFDFDF
+  background-color: #aaa;
 }
 
 .dropdown-username {
@@ -133,33 +129,26 @@
     display: block;
     padding: 0;
     height: 1px;
-    margin-top: 30px;
+    margin-top: 27px;
     width: 75%;
     margin-left: 26px;
-    margin-bottom: 12px;
-    
-    
-}
-.dropdown-logout-wrap {
-    padding-left: 23px;
-    padding-top: 14px;
-    padding-bottom: 14px;
 }
 
-.dropdown-logout-wrap li {
+.dropdown-list-item-logout {
     font-size: 16px;
     display: flex;
+    margin-left: 23px;
+    margin-bottom: 15px;
+    margin-top: 18px;
     list-style-type: none;
+    z-index: 1000;
+    /* padding: 38px 49px 19px;
+    
 }
-  
 
 
 
-
-
-
-
-.navbar-signup-button {
+.signup-button {
     background:none;
     border:none;
     margin:0;

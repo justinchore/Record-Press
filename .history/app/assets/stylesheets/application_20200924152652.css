@@ -78,7 +78,6 @@
   border: none; 
   outline: none; 
   background: none;
-  cursor: pointer
   
 }
 
@@ -103,63 +102,20 @@
   top: 115%
 }
 
-.dropdown-list-item-first:hover {
-  background-color: #DFDFDF
-}
-
-.dropdown-logout-wrap:hover {
-  background-color: #DFDFDF
-}
-
-.dropdown-username {
-    width: 200px;
-    font-size: 17px;
-    z-index: 1000;
-    padding: 15px 0px;
-    list-style-type: none;
-    display: flex;
-    margin-left: 23px;
-    font-weight: 600;
-}
-
-.dropdown-first-footer {
-      display: flex;
-    margin-left: 24px;
-    margin-top: -8px;
-}
-
-.dropdown-divider {
-    background-color: #DFDFDF;
-    display: block;
-    padding: 0;
-    height: 1px;
-    margin-top: 30px;
-    width: 75%;
-    margin-left: 26px;
-    margin-bottom: 12px;
-    
-    
-}
-.dropdown-logout-wrap {
-    padding-left: 23px;
-    padding-top: 14px;
-    padding-bottom: 14px;
-}
-
-.dropdown-logout-wrap li {
-    font-size: 16px;
-    display: flex;
-    list-style-type: none;
-}
+.dropdown-item-first {
   
+}
+
+.dropdown-list-item {
+  list-style-type: none;
+  width: 200px;
+  font-size: 15px;
+  z-index: 1000;
+  padding: 15px 0px;
+}
 
 
-
-
-
-
-
-.navbar-signup-button {
+.signup-button {
     background:none;
     border:none;
     margin:0;

@@ -107,7 +107,7 @@
   background-color: #DFDFDF
 }
 
-.dropdown-logout-wrap:hover {
+.dropdown-logout-wrap li:hover {
   background-color: #DFDFDF
 }
 
@@ -133,12 +133,9 @@
     display: block;
     padding: 0;
     height: 1px;
-    margin-top: 30px;
+    margin-top: 27px;
     width: 75%;
     margin-left: 26px;
-    margin-bottom: 12px;
-    
-    
 }
 .dropdown-logout-wrap {
     padding-left: 23px;
@@ -151,11 +148,7 @@
     display: flex;
     list-style-type: none;
 }
-  
-
-
-
-
+    
 
 
 
