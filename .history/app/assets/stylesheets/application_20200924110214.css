@@ -1,0 +1,266 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+  html, body, div, p, span, h1, h2, h3, h4, a, ol, ul, li, form, label, article, aside, figure, figcaption, footer, header, main, nav {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 12px;
+   vertical-align: baseline;
+ } 
+
+.guest-container {
+    display: flex; 
+    background-color:#FFFFFF;
+    justify-content: space-between;
+    padding: 0 15px;
+    font-family: "Helvetica Neue", sans-serif;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.navbar-logo-container {
+    display: flex; 
+    justify-content: flex-start;
+    padding: 8px;
+    text-decoration: none;
+}
+
+.navBarLogo {
+    font-size: 50px;
+    line-height: 30px;
+    color: #1DA0C3;
+    text-decoration: none;
+}
+
+.site-name-logo{
+    font-size: 15px;
+    line-height: 40px;
+    color: #333333;
+    text-decoration: none;
+}
+
+.nav-list {
+    display: flex; 
+    list-style-type: none;
+}
+
+.list-item {
+    padding: 5px 10px;
+    line-height: 45px;
+}
+
+.list-item a {
+    font-size: 15px;
+    text-decoration: none;
+    color: #333333;
+}
+
+.drpdown {
+  overflow: visible; 
+}
+
+.dropbtn {
+  font-size: 35px; 
+  border: none; 
+  outline: none; 
+  background: none;
+  
+}
+
+ .dropbtn:hover {
+  background-color: #aaa;
+}
+
+.dropdown-list-item:hover {
+  background-color: #aaa;
+}
+
+#dropdown-items {
+  position:relative;
+  display: inline-block;
+  right: 30px;
+  background-color: #FFFFFF;
+  border: solid 4px #EEEEEE
+  
+}
+
+.dropdown-list-item {
+  list-style-type: none;
+  width: 200px;
+  font-size: 18px;
+  z-index: 1000;
+}
+
+
+.signup-button {
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+    font-size: 15px;
+    line-height: 45px;
+    color: #333333;
+}
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+
+.modal-child {
+    width: 500px; 
+    background-color:white; 
+    z-index: 3;
+    box-sizing:border-box; 
+    padding: 0;
+    position:absolute;
+    top: 141px;
+    left: 35.5%;
+    font-size: 16px;
+    border-radius: 6px;
+}
+
+.signup-window-container{
+    padding: 0px 0 0 0;
+    font-family: "Helvetica Neue", sans-serif;
+}
+
+.header-text {
+font-size: 18px;
+  box-sizing: border-box;
+  text-align: center;
+  width: 100%;
+  display: block;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ededed;
+  margin-top: 0;
+  padding: 10px 10px 10px 10px;
+  font-weight: 400;
+  border-radius: 6px 6px 0 0;
+}
+
+.close-form {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  color: #aaa;
+  text-decoration: none;
+}
+
+.signup-form-container {
+    box-sizing: border-box;
+  padding: 2px 0 0 0;
+
+}
+
+.inner-form-inputs {
+    box-sizing: border-box;
+    padding: 17px 80px 0 80px;
+}
+
+.input-label {
+    display: block;
+  text-align: left;
+  font-weight: 400;
+  margin-top: 20px;
+  font-size: 14px; 
+}
+
+.input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  font-weight: 400;
+  border: 1px solid #ccc;
+  padding: 4px 10px 4px 10px;
+  height: 35px;
+  font-size: 14px;
+}
+
+.input:focus {
+    outline: solid 1px rgb(82, 195, 255)
+}
+
+.submit-button {
+  background-color: rgb(0,161,198);
+  text-align: center;
+  border-radius: 4px;
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  color: white;
+  margin-top: 30px;
+  padding: 4px 10px 4px 10px;
+  height: 35px;
+  box-sizing: border-box;
+  display: block;
+}
+
+.submit-button:hover {
+    text-decoration: underline;
+}
+
+.signup-footer {
+  color: #818285;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  text-align: center;
+  padding: 0;
+}
+
+.signup-login-link {
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 45px;
+    color:  #477987; 
+}
+
+.toggle-artist-link {
+   color: rgb(82, 195, 255);
+}
+
+
+
+
+
+/* 
+ position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+
+
+
+
+
+
+
+
+
