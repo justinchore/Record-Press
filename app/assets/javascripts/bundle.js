@@ -313,13 +313,9 @@ var NavBars = function NavBars(_ref) {
   var currentUser = _ref.currentUser,
       logout = _ref.logout,
       openModal = _ref.openModal;
-  console.log(currentUser);
 
   var guestNavBar = function guestNavBar() {
     console.log('GUEST NAV BAR');
-    console.log(currentUser);
-    console.log(logout);
-    console.log(openModal);
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "guest-container"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -683,15 +679,17 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["login"])(user));
     },
-    otherForm: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
-      className: "signup-link",
+    otherForm:
+    /*#__PURE__*/
+    // <button className="signup-link" onClick={() => dispatch(openModal('signup'))}>here</button>
+    react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      to: "/"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      className: "login-signup-link",
       onClick: function onClick() {
         return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["openModal"])('signup'));
       }
-    }, "here"),
-    closeModal: function closeModal() {
-      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["closeModal"])());
-    }
+    }, "here"))
   };
 };
 
@@ -904,9 +902,9 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
         type: "submit",
         className: "submit-button",
         value: "Submit"
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-footer"
-      }, "Already have an account? ", this.props.navLink), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.renderErrors())));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Already have an account? Log in ", this.props.otherForm), this.renderErrors())));
     }
   }]);
 
@@ -964,7 +962,18 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     openModal: function openModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["openModal"])());
-    }
+    },
+    otherForm:
+    /*#__PURE__*/
+    // <button className="signup-link" onClick={() => dispatch(openModal('signup'))}>here</button>
+    react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/login"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("button", {
+      className: "signup-login-link",
+      onClick: function onClick() {
+        return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["closeModal"])());
+      }
+    }, "here"))
   };
 };
 

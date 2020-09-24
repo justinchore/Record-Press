@@ -142,7 +142,7 @@ class SignupForm extends React.Component {
                         </form>
                     </div>
                     <div className='signup-footer'>
-                <p>Already have an account? Log in { this.props.otherForm }</p>
+                <p>Already have an account? { this.props.otherForm }</p>
                 {this.renderErrors()}
                     </div>
             </div>

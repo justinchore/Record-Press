@@ -6,6 +6,9 @@ import SignupContainer from '../session_form/signup_container';
 const NavBars = ({ currentUser, logout, openModal }) => {
     const guestNavBar = () => {
         console.log('GUEST NAV BAR')
+        console.log(currentUser); 
+        console.log(logout); 
+        console.log(openModal);
     return(
         <div className = "guest-container">
             <div className = "navbar-logo-container">
