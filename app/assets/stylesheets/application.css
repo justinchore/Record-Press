@@ -298,6 +298,7 @@ font-size: 18px;
 
 .toggle-artist-link {
    color: rgb(82, 195, 255);
+   cursor: pointer;
 }
 
 .signup-errors {

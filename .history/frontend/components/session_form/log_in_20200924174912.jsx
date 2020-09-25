@@ -54,14 +54,13 @@ class LoginForm extends React.Component {
         this.update = this.update.bind(this); 
         this.renderErrors = this.renderErrors.bind(this); 
         this.handleSubmit = this.handleSubmit.bind(this); 
-        // this.validateFields = this.validateFields.bind(this); 
+        this.validateFields = this.validateFields.bind(this); 
     }
 
     handleSubmit() {
-    //    if (this.validateFields().length === 0) {
-    //         this.props.processForm(this.state); 
-    //     } 
-        this.props.processForm(this.state); 
+       if (this.validateFields().length === 0) {
+            this.props.processForm(this.state); 
+        } 
     }
 
     update(field) {
@@ -82,24 +81,22 @@ class LoginForm extends React.Component {
         );
     }
 
-    // validateFields() {
-    //     let field_errors = [];
-    //     if (this.state.username_or_email === "") {
-    //         field_errors.push("Please enter your username.")
-    //     }
-    //     if (this.state.password.length > 0 && this.state.password.length < 6) {
-    //         field_errors.push("Your password is longer than 5 characters")
-    //     } else if(this.state.password === "") {
-    //         field_errors.push("Please enter a password.")
-    //     }
+    validateFields() {
+        let field_errors = [];
+        if (this.state.username_or_email === "") {
+            field_errors.push(<p className="login-form-field-error">Please enter your username.</p>);
+        }
+        if (this.state.password.length > 0 && this.state.password.length < 6) {
+            field_errors.push(<p className="login-form-field-error">Passwords are longer than 6 characters.</p>)
+        } else if(this.state.password === "") {
 
-    //      return field_errors; 
-    // }
+        }
+
+
+        return field_errors; 
+    }
 
     render() {
-        // let username_errors = this.validateFields().filter(error => (error.toLowerCase().includes("username")));
-        // let password_errors = this.validateFields().filter(error => (error.toLowerCase().includes("password")))
-        
         return(
         <div className ='login-page'>
                 <div className="login-banner">
@@ -129,13 +126,6 @@ class LoginForm extends React.Component {
                                                 </input>
                                             </div>
                                     </div>
-                                    <div>
-                                        {/* {
-                                           this.validateFields().map(error=>(
-                                               <li>{error}</li>
-                                           ))
-                                        } */}
-                                    </div>
                                     <div className="login-inputs-wrap">
                                         <label>Password</label>
                                         <div className="input-wrap" >
@@ -146,13 +136,6 @@ class LoginForm extends React.Component {
                                                 onChange={this.update('password')}>
                                             </input>
                                         </div>
-                                    </div>
-                                    <div>
-                                        {/* {
-                                            this.validateFields().map(error => (
-                                                <li>{error}</li>
-                                            ))
-                                        } */}
                                     </div>
                                     <div className="login-button-container">
                                            <input type="submit" className="login-button" value="Log In"></input>

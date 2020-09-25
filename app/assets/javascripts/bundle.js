@@ -354,7 +354,7 @@ var ClickDropDown = /*#__PURE__*/function (_React$Component) {
     key: "handleBlur",
     value: function handleBlur(e) {
       this.setState({
-        show: true
+        show: false
       });
     }
   }, {
@@ -679,15 +679,17 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
     };
     _this.update = _this.update.bind(_assertThisInitialized(_this));
     _this.renderErrors = _this.renderErrors.bind(_assertThisInitialized(_this));
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this)); // this.validateFields = this.validateFields.bind(this); 
+
     return _this;
   }
 
   _createClass(LoginForm, [{
     key: "handleSubmit",
     value: function handleSubmit() {
-      console.log("submitting...");
-      console.log(this.state);
+      //    if (this.validateFields().length === 0) {
+      //         this.props.processForm(this.state); 
+      //     } 
       this.props.processForm(this.state);
     }
   }, {
@@ -709,21 +711,24 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
           key: "error-".concat(i)
         }, error);
       }));
-    } // signupModal() {
-    //     const [isOpen, setIsOpen] = useState(false);
-    //     return (
-    //         <>
-    //             <Link onClick={() => setIsOpen(true)} to="/signup">here</Link>
-    //             <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-    //                 <SignupContainer />
-    //             </Modal>
-    //         </>
-    //     )
+    } // validateFields() {
+    //     let field_errors = [];
+    //     if (this.state.username_or_email === "") {
+    //         field_errors.push("Please enter your username.")
+    //     }
+    //     if (this.state.password.length > 0 && this.state.password.length < 6) {
+    //         field_errors.push("Your password is longer than 5 characters")
+    //     } else if(this.state.password === "") {
+    //         field_errors.push("Please enter a password.")
+    //     }
+    //      return field_errors; 
     // }
 
   }, {
     key: "render",
     value: function render() {
+      // let username_errors = this.validateFields().filter(error => (error.toLowerCase().includes("username")));
+      // let password_errors = this.validateFields().filter(error => (error.toLowerCase().includes("password")))
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-page"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -756,7 +761,7 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
         type: "text",
         value: this.state.email,
         onChange: this.update('username_or_email')
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-inputs-wrap"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Password"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "input-wrap"
@@ -765,7 +770,7 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
         type: "password",
         value: this.state.password,
         onChange: this.update('password')
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-button-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
@@ -970,61 +975,10 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
           password: "Hunter12"
         });
       }
-    } // artistFields() {
-    //     let artistFields = {}; 
-    //     if (this.state.is_artist) {
-    //         artistFields = {
-    //             artistName: <div><label className="input-label">Artist/Band name</label>
-    //                 <input className="input"
-    //                     type="text"
-    //                     value={this.state.artistName}
-    //                     onChange={this.update('artistName')}
-    //                 >
-    //                 </input>
-    //                 </div>, 
-    //             genre: <div><label className="input-label">Genre</label>
-    //                 <input className="input"
-    //                     type="text"
-    //                     value={this.state.genre}
-    //                     onChange={this.update('genre')}
-    //                 >
-    //                 </input>
-    //             </div>, 
-    //             location: <div><label className="input-label">Location</label>
-    //                 <input className="input"
-    //                     type="text"
-    //                     value={this.state.location}
-    //                     onChange={this.update('location')}
-    //                 >
-    //                 </input>
-    //             </div>,
-    //         }
-    //     }
-    //     return artistFields
-    // }
-    // changeForm() {
-    //     let changeForm = {}; 
-    //     if (!this.state.is_artist) {
-    //         changeForm = {
-    //             text: <h4>Signing up for a <a className="toggle-artist-link" onClick={this.toggleIsArtist('is_artist')}> fan account.</a></h4>
-    //         }
-    //     } else {
-    //         changeForm = {
-    //             text: <h4 className="other-form">Are you an artist? Sign up <a className = "toggle-artist-link" onClick={this.toggleIsArtist('is_artist')}> here.</a></h4>
-    //             }
-    //         }
-    //     return changeForm; 
-    // }
-    // formHeader() {
-    //     let formHeader = {}
-    //     if (this.state.is_artist) {
-    //         formHeader = { text: <span className="header-text">Sign up for an Artist Account</span> }
-    //     } else {
-    //         formHeader = { text: <span className="header-text">Sign up for an Artist Account</span> }
-    //     }
-    //     return formHeader; 
-    // }
-
+    }
+  }, {
+    key: "validateFields",
+    value: function validateFields() {}
   }, {
     key: "render",
     value: function render() {
@@ -1412,9 +1366,6 @@ var sessionReducer = function sessionReducer() {
   Object.freeze(state);
 
   switch (action.type) {
-    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_SESSION_ERRORS"]:
-      return action.errors;
-
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
       console.log("receiving user in session reducer");
       return {
