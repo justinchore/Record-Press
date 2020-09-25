@@ -22,7 +22,10 @@
    vertical-align: baseline;
  } 
 
-.guest-container {
+ /* @media (max-width: 1280px) and (min-width: 1025px) */
+
+
+/* .guest-container {
     display: flex; 
     background-color:#FFFFFF;
     justify-content: space-between;
@@ -67,7 +70,7 @@
     text-decoration: none;
     color: #333333;
     width: 236px;
-}
+} */
 
 .drpdown {
   overflow: visible; 
@@ -327,3 +330,8 @@ font-size: 18px;
 
 
 
+.guest_home-grid-container{
+    display: grid;  
+    grid-template-columns: 60% 40%; 
+    height: 105px; 
+}

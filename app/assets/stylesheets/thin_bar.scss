@@ -1,0 +1,46 @@
+.guest-container {
+    display: flex; 
+    background-color:#FFFFFF;
+    justify-content: space-between;
+    padding: 0 15px;
+    font-family: "Helvetica Neue", sans-serif;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.navbar-logo-container {
+    display: flex; 
+    justify-content: flex-start;
+    padding: 8px;
+    text-decoration: none;
+}
+
+.navBarLogo {
+    font-size: 50px;
+    line-height: 30px;
+    color: #1DA0C3;
+    text-decoration: none;
+}
+
+.site-name-logo{
+    font-size: 15px;
+    line-height: 40px;
+    color: #333333;
+    text-decoration: none;
+}
+
+.nav-list {
+    display: flex; 
+    list-style-type: none;
+}
+
+.list-item {
+    padding: 5px 10px;
+    line-height: 45px;
+}
+
+.list-item a {
+    font-size: 15px;
+    text-decoration: none;
+    color: #333333;
+    width: 236px;
+}

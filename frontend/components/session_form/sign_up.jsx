@@ -43,7 +43,7 @@ class SignupForm extends React.Component {
     }
 
     renderErrors() {
-        console.log(this.props.errors);
+        // console.log(this.props.errors);
         return (
             <ul className="signup-errors">
                 {this.props.errors.map((error, i) => (

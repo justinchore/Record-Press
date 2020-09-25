@@ -7,14 +7,14 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 
 
 const mapStateToProps = ( {errors} ) => {
-    console.log(errors.session);
+    // console.log(errors.session);
     return {
         errors: errors.session,
         formType: 'Log in'
     }
 };
 const mapDispatchToProps = dispatch => {
-    console.log("props!");
+    // console.log("props!");
     return {
         processForm: (user) => dispatch(login(user)),
         otherForm: (

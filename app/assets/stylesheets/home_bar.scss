@@ -1,0 +1,100 @@
+.guest-home-grid-container{
+    display: grid;  
+    grid-template-columns: 55% 45%; 
+    height: 105px; 
+    padding-bottom: 11px;
+    border-bottom: solid 1px black;
+    width: 100%;
+}
+
+.guest-homebar-logo-container {
+    display: grid;
+    width: 600px;
+    grid-template-columns: 1fr 12fr;
+    margin-left: 15%
+}
+
+
+.homebar-logo {
+    font-size: 50px;
+    line-height: 30px;
+    color: #1DA0C3;
+    text-decoration: none;
+    margin-left: 60px;
+    margin-top: 19px;
+}
+
+.cool-text {
+    color: #408ea3;
+    background: -webkit-linear-gradient(left, #6046FE, #1DA0C3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.homebar-sitename {
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 20px;
+    margin-top: 24.5px;
+    margin-right: 106px;
+}
+
+.home-message {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    font-size: 16px;
+    margin-left: 55px;
+    font-family: "Helvetica Neue", sans-serif;
+    margin-top: 5px;
+    color: #161113;
+    opacity: 1;
+}
+
+.login-search-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-rows: 1fr 1fr
+}
+
+.guesthome-search-bar {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background-color: yellow;
+}
+
+.homebar-login-item {
+     grid-column-start: 3;
+     grid-column-end: 4; 
+     margin-right: 60px;
+     margin-top:20px;
+}
+
+.homebar-login-link {
+    font-size: 16px;
+    color: #000000;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: bold;
+}
+
+.homebar-signup-item {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+    font-size: 16px;
+    color:  #000000; 
+    font-family: "Helvetica Neue", sans-serif;
+    margin-left: 80px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+
+
+

@@ -1,0 +1,90 @@
+.featured-albums-container {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1px;
+    width: inherit;
+    height: 600px;
+    background: black; 
+}
+
+.black-bar{
+    grid-row-start: 1;
+    grid-row-end: 4;
+    background-color: black;
+}
+
+@media screen and (max-width: 1024px) {
+    .black-bar {
+        display: none !important;
+    }
+}
+
+.black-bar-end{
+    grid-column-start: 8;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    background-color: black;
+}
+
+.big-album-container {
+    grid-column-start: 2;
+    grid-column-end: 6;
+    grid-row-start: 1; 
+    grid-row-end: 4; 
+
+   background-image: url("Jimihendrix.jpg");
+
+   background-size: cover; 
+}
+
+.artist-information {
+   
+}
+
+.link-to-artist {
+
+}
+
+// .featured-albums-column {
+//   grid-column-start: 6;
+//   grid-column-end: 8;
+//   grid-row-start: 1; 
+//   grid-row-end: 4;
+// }
+
+.album1-container {
+    background-image: url("patsycline.jpg");
+    background-size: cover;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 6;
+    grid-column-end: 8;
+}
+
+.album2-container {
+    background-image: url("kevinmorby.jpg");
+    background-size: cover;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 6;
+    grid-column-end: 8;
+}
+
+.album3-container {
+    background-image: url("coltrane.jpg");
+    background-size: cover;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 6;
+    grid-column-end: 8;
+}
+
+.title-of-album {
+    
+}
+
+.small-album-details {
+   
+}
+

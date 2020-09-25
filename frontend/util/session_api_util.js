@@ -1,5 +1,5 @@
 export const login = user => {
-    console.log("AJAX login!")
+    // console.log("AJAX login!")
     return (
     $.ajax({
         method: 'POST', 

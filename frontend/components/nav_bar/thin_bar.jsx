@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import DropDownContainer from './drop_down_container'; 
 
 
-const NavBars = ({ currentUser, logout, openModal }) => {
-    const guestNavBar = () => {
-        console.log('GUEST NAV BAR')
+const ThinBar = ({ currentUser, logout, openModal }) => {
+    const guestThinBar = () => {
+        // console.log('GUEST NAV BAR')
     return(
         <div className = "guest-container">
             <Link to="/" className = "navbar-logo-container">
@@ -23,7 +23,7 @@ const NavBars = ({ currentUser, logout, openModal }) => {
         </div>
     )};
 
-    const userNavBar = () => {
+    const userThinBar = () => {
         return(
         <div className="guest-container">
             <Link to="/" className="navbar-logo-container">
@@ -47,8 +47,8 @@ const NavBars = ({ currentUser, logout, openModal }) => {
         )
     };
 
-    return currentUser ? userNavBar() : guestNavBar();
+    return currentUser ? userThinBar() : guestThinBar();
 };
 
 
-export default NavBars;
+export default ThinBar;

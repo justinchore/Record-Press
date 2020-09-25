@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { openModal } from '../../actions/modal_actions';
 import { logout } from '../../actions/session_actions';
-import NavBars from './nav_bar';
+import HomeBar from './home_bar';
 
 const mapStateToProps = ({ session, entities: { users } }) => {
     return {
@@ -17,5 +17,5 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(NavBars);
+)(HomeBar);
 
