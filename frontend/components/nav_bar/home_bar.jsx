@@ -14,7 +14,7 @@ const HomeBar = ({ currentUser, logout, openModal }) => {
                     <div className="home-message">Discover amazing new music and <a className="cool-text">directly support</a> the artists who make it.</div>
                 </div>
                 <div className="login-search-container">
-                <div className="guesthome-search-bar">SEARCH BAR</div>
+                <div className="guesthome-search-bar"><input type="text" disabled></input></div>
                 
                 <button className="homebar-signup-item" onClick={() => openModal('signup')}>sign up</button>
                     <p className="homebar-login-item"><Link to="/login" className="homebar-login-link">log in</Link></p>

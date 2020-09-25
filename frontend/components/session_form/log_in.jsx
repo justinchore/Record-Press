@@ -57,10 +57,11 @@ class LoginForm extends React.Component {
         // this.validateFields = this.validateFields.bind(this); 
     }
 
-    handleSubmit() {
+    handleSubmit(e) {
     //    if (this.validateFields().length === 0) {
     //         this.props.processForm(this.state); 
     //     } 
+        e.preventDefault();
         this.props.processForm(this.state); 
     }
 

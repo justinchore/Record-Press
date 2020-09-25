@@ -54,20 +54,30 @@
 .login-search-container {
     display: grid;
     grid-template-columns: 1fr 2fr 2fr;
-    grid-template-rows: 1fr 1fr
+    grid-template-rows: 1fr 1fr;
+   
+}
+
+.login-search-container input {
+    background-color: #eee;
+    border: none;
+    width: 318px;
+    height: 29px;
 }
 
 .guesthome-search-bar {
-    grid-column-start: 1;
+    grid-column-start: 2;
     grid-column-end: 4;
-    background-color: yellow;
+    margin-left: 0%;
+    margin-top: 5%;
+    border-radius: 12px;
 }
 
 .homebar-login-item {
      grid-column-start: 3;
      grid-column-end: 4; 
      margin-right: 60px;
-     margin-top:20px;
+     margin-top:23px;
 }
 
 .homebar-login-link {

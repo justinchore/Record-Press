@@ -698,7 +698,10 @@ var HomeBar = function HomeBar(_ref) {
       className: "login-search-container"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "guesthome-search-bar"
-    }, "SEARCH BAR"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      type: "text",
+      disabled: true
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       className: "homebar-signup-item",
       onClick: function onClick() {
         return openModal('signup');
@@ -1010,10 +1013,11 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
 
   _createClass(LoginForm, [{
     key: "handleSubmit",
-    value: function handleSubmit() {
+    value: function handleSubmit(e) {
       //    if (this.validateFields().length === 0) {
       //         this.props.processForm(this.state); 
       //     } 
+      e.preventDefault();
       this.props.processForm(this.state);
     }
   }, {
