@@ -7,19 +7,26 @@ const HomeBar = ({ currentUser, logout, openModal }) => {
     const guestHomeBar = () => {
         // console.log('GUEST NAV BAR')
         return (
+            <div className= "outer-home-header-div">
             <div className="guest-home-grid-container">
                 <div className="guest-homebar-logo-container">
-                    <p className="homebar-logo">▰</p>
+                    <p className="home-header-parallelogram"></p>
                     <p className="homebar-sitename">RecordPress</p>
-                    <div className="home-message">Discover amazing new music and <a className="cool-text">directly support</a> the artists who make it.</div>
+                    <div className="home-message-wrapper">
+                        <p className="home-message">Discover amazing new music and <a className="cool-text">directly support</a> the artists who make it.</p>
+                    </div>
                 </div>
                 <div className="login-search-container">
                 <div className="guesthome-search-bar"><input type="text" disabled></input></div>
-                
-                <button className="homebar-signup-item" onClick={() => openModal('signup')}>sign up</button>
-                    <p className="homebar-login-item"><Link to="/login" className="homebar-login-link">log in</Link></p>
+                <ul className="homebar-login-signup-wrapper">
+                            <li><button className="homebar-signup-item" onClick={() => openModal('signup')}>sign up</button></li>
+                            <li className="homebar-login-link"> <Link to="/login" style={{textDecoration: "none"}}className="homebar-login-text">log in</Link></li>
+                 </ul>
                 </div>
             </div>
+            <div className="banner-margin"></div>
+            </div>
+            
         )
     };
 

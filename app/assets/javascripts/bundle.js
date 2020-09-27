@@ -287,36 +287,18 @@ var FeaturedAlbums = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "featured-albums-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "black-bar"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "black-bar-end"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "big-album-container"
+        className: "albums-show-container"
+      }, "albums show", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-featured-album-container"
+      }, "main featured"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sub-artists-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "big-album-title-container"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "artist-information"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "link-to-artist"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "album1-container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "title-of-album"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "small-album-details"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "album2-container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "title-of-album"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "small-album-details"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "album3-container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "title-of-album"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "small-album-details"
-      }))));
+        className: "sub-album1"
+      }, "album1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sub-album2"
+      }, "album2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sub-album3"
+      }, "album3")))));
     }
   }]);
 
@@ -370,9 +352,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var HomePage = function HomePage() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "main-homepage-container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_featured_albums_container__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_featured_albums_container__WEBPACK_IMPORTED_MODULE_1__["default"], null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (HomePage);
@@ -683,35 +663,46 @@ var HomeBar = function HomeBar(_ref) {
   var guestHomeBar = function guestHomeBar() {
     // console.log('GUEST NAV BAR')
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "outer-home-header-div"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "guest-home-grid-container"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "guest-homebar-logo-container"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-      className: "homebar-logo"
-    }, "\u25B0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      className: "home-header-parallelogram"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
       className: "homebar-sitename"
     }, "RecordPress"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "home-message-wrapper"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
       className: "home-message"
     }, "Discover amazing new music and ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       className: "cool-text"
-    }, "directly support"), " the artists who make it.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }, "directly support"), " the artists who make it."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "login-search-container"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "guesthome-search-bar"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
       type: "text",
       disabled: true
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      className: "homebar-login-signup-wrapper"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       className: "homebar-signup-item",
       onClick: function onClick() {
         return openModal('signup');
       }
-    }, "sign up"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-      className: "homebar-login-item"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-      to: "/login",
+    }, "sign up")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       className: "homebar-login-link"
-    }, "log in"))));
+    }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/login",
+      style: {
+        textDecoration: "none"
+      },
+      className: "homebar-login-text"
+    }, "log in"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "banner-margin"
+    }));
   };
 
   var userHomeBar = function userHomeBar() {
@@ -1234,13 +1225,14 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
       is_artist: false,
       artistName: "",
       location: "",
-      genre: ""
+      genre_id: 0
     };
     _this.update = _this.update.bind(_assertThisInitialized(_this));
     _this.toggleIsArtist = _this.toggleIsArtist.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.renderErrors = _this.renderErrors.bind(_assertThisInitialized(_this));
-    _this.demoUser = _this.demoUser.bind(_assertThisInitialized(_this)); // this.artistFields = this.artistFields.bind(this); 
+    _this.demoUser = _this.demoUser.bind(_assertThisInitialized(_this));
+    _this.updateGenre = _this.updateGenre.bind(_assertThisInitialized(_this)); // this.artistFields = this.artistFields.bind(this); 
     // this.changeForm = this.changeForm.bind(this); 
     // this.formHeader = this.formHeader.bind(this);
 
@@ -1254,21 +1246,32 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
       this.props.processForm(this.state);
     }
   }, {
-    key: "update",
-    value: function update(field) {
+    key: "updateGenre",
+    value: function updateGenre() {
       var _this2 = this;
 
       return function (e) {
-        _this2.setState(_defineProperty({}, field, e.target.value));
+        _this2.setState({
+          genre_id: Number(e.target.value) + 1
+        });
+      };
+    }
+  }, {
+    key: "update",
+    value: function update(field) {
+      var _this3 = this;
+
+      return function (e) {
+        _this3.setState(_defineProperty({}, field, e.target.value));
       };
     }
   }, {
     key: "toggleIsArtist",
     value: function toggleIsArtist() {
-      var _this3 = this;
+      var _this4 = this;
 
       return function (prevState) {
-        return _this3.setState(function (prevState) {
+        return _this4.setState(function (prevState) {
           return {
             is_artist: !prevState.is_artist
           };
@@ -1305,16 +1308,16 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
       }
     }
   }, {
-    key: "validateFields",
-    value: function validateFields() {}
-  }, {
     key: "render",
     value: function render() {
+      console.log(this.state);
+
       if (this.props.currentUser) {
         this.props.closeModal();
       }
 
       ;
+      var genres = ["Pop", "Rock", "Hip-hop", "Alternative", "Folk", "Jazz", "Classical", "Metal", "Electronic", "Soundtrack"];
       var artistFields = {};
       var changeForm = {};
       var formHeader = {};
@@ -1331,18 +1334,23 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
           })),
           genre: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
             className: "input-label"
-          }, "Genre"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          }, "Genre"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
             className: "input",
-            type: "text",
-            value: this.state.genre,
-            onChange: this.update('genre')
-          })),
+            name: "select one",
+            onChange: this.updateGenre()
+          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+            value: "-1"
+          }, "select one"), genres.map(function (genre, idx) {
+            return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+              value: idx
+            }, genre);
+          }))),
           location: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
             className: "input-label"
           }, "Location"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
             className: "input",
             type: "text",
-            value: this.state.location,
+            name: "select one",
             onChange: this.update('location')
           }))
         };

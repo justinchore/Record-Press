@@ -10,7 +10,7 @@ class SignupForm extends React.Component {
             is_artist: false,
             artistName: "",
             location: "",
-            genre: ""
+            genre_id: 0
         }
 
 
@@ -20,6 +20,7 @@ class SignupForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this); 
         this.renderErrors = this.renderErrors.bind(this);
         this.demoUser = this.demoUser.bind(this);
+        this.updateGenre = this.updateGenre.bind(this);
         // this.artistFields = this.artistFields.bind(this); 
         // this.changeForm = this.changeForm.bind(this); 
         // this.formHeader = this.formHeader.bind(this);
@@ -27,8 +28,15 @@ class SignupForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.processForm(this.state)
+            this.props.processForm(this.state)
     }
+
+    updateGenre() {
+        return (e) => {
+            this.setState({genre_id: Number(e.target.value) + 1})
+        }
+    }
+
     update(field) {
         return (e) => {
             this.setState({[field]: e.target.value})
@@ -69,14 +77,24 @@ class SignupForm extends React.Component {
         }
     }
 
-    validateFields() {
-
-    }
+    
 
     render() { 
+        console.log(this.state)
         if (this.props.currentUser) {
             this.props.closeModal();
         }; 
+        const genres = ["Pop", 
+                        "Rock", 
+                        "Hip-hop", 
+                        "Alternative", 
+                        "Folk", 
+                        "Jazz", 
+                        "Classical", 
+                        "Metal",
+                        "Electronic",
+                        "Soundtrack"]
+
         let artistFields = {}; 
         let changeForm = {}; 
         let formHeader = {}; 
@@ -91,17 +109,19 @@ class SignupForm extends React.Component {
                     </input>
                     </div>, 
                 genre: <div><label className="input-label">Genre</label>
-                    <input className="input"
-                        type="text"
-                        value={this.state.genre}
-                        onChange={this.update('genre')}
-                    >
-                    </input>
+                    <select className="input"
+                        name="select one"
+                        onChange={this.updateGenre()}
+                        >
+                        <option value= "-1">select one</option>
+                        {genres.map((genre, idx) => 
+                            (<option value={idx}>{genre}</option>))}
+                    </select>
                 </div>, 
                 location: <div><label className="input-label">Location</label>
                     <input className="input"
                         type="text"
-                        value={this.state.location}
+                        name="select one"
                         onChange={this.update('location')}
                     >
                     </input>

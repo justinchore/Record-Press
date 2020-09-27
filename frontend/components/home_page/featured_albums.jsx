@@ -7,41 +7,27 @@ class FeaturedAlbums extends React.Component {
 
     render() {
         return (
-        <div>
+            <div>
             <div className="featured-albums-container">
-            <div className="black-bar"></div>
-            <div className="black-bar-end"></div>
-            <div className="big-album-container">
-                    {/*set to grid teplate 6* background image here*/}
-                    <div className="big-album-title-container">
-                        {/*Big Album Title here*/}        
+                <div className="albums-show-container">
+                    albums show
+                    <div className="main-featured-album-container">
+                        main featured
                     </div>
-                    <div className="artist-information"></div>
-                    <div className="link-to-artist"></div>
-            </div>
-            
-                
-                <div className ="album1-container">
-                    {/*background of album, */}
-                    <div className="title-of-album"></div>
-                    <div className="small-album-details"></div>
-                </div>
-                <div className="album2-container">
-                    {/*background of album, */}
-                    <div className="title-of-album"></div>
-                    <div className="small-album-details"></div>
-                </div>
-                <div className="album3-container">
-                    {/*background of album, */}
-                    <div className="title-of-album"></div>
-                    <div className="small-album-details"></div>
-                </div>
-           
-                
+                   
+                        <div className="sub-artists-container">
+                        
+                        <div className="sub-album1">album1</div>
+                        <div className="sub-album2">album2</div>
+                        <div className="sub-album3">album3</div>
+               
+                        </div>
 
-           </div>
-        </div>
-        )
+            </div>
+            </div>
+    </div>
+              
+         )
     }
 }
 
