@@ -17,18 +17,12 @@ class User < ApplicationRecord
         primary_key: :id, 
         foreign_key: :artist_id, 
         class_name: :Track
+
+    belongs_to :genre, 
+        primary_key: :id, 
+        foreign_key: :genre_id, 
+        class_name: :Genre
     
-    has_one :genre_joins, :as => :genreable
-
-    has_one :genre,
-        through: :genre_joins,
-        source: :genre
-
-    
-    # , -> { where(is_artist: true)}, :foreign_key => :artist_id 
-    # has_many :tracks, -> { where(is_artist: true)}, :foreign_key => :artist_id 
-
-
 
     after_initialize :ensure_session_token
     attr_reader :password
@@ -80,7 +74,7 @@ class User < ApplicationRecord
     private 
 
       def artist_no_zeros 
-        if is_artist && genre_id === 0 
+        if is_artist && genre_id === 1 
             errors.add(:genre_id, 'must be selected')
         end
     end

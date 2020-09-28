@@ -54,6 +54,7 @@ class LoginForm extends React.Component {
         this.update = this.update.bind(this); 
         this.renderErrors = this.renderErrors.bind(this); 
         this.handleSubmit = this.handleSubmit.bind(this); 
+        this.demoUser = this.demoUser.bind(this);
         // this.validateFields = this.validateFields.bind(this); 
     }
 
@@ -82,6 +83,17 @@ class LoginForm extends React.Component {
             </ul>
         );
     }
+
+    demoUser(e) {
+        e.preventDefault();
+        this.props.demoUserLogin({
+            username_or_email: "bestfan",
+            password: "Hunter12"
+        })
+    } 
+           
+
+
 
     // validateFields() {
     //     let field_errors = [];
@@ -163,6 +175,9 @@ class LoginForm extends React.Component {
                                         <div className="sign-ups">
                                            <p>Don't have an account? Sign up {this.props.otherForm}</p>
                                         </div>
+                                    </div>
+                                    <div>
+                                       <button  className="login-demo-user"onClick={this.demoUser}>demo user</button> 
                                     </div>
                                 </div>
                             </div>

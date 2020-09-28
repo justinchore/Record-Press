@@ -1,14 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first
-require "open-uri"
-
-
-# Genre.destroy_all
 genres = Genre.create([
     { genre_name: "None"},
     { genre_name: "Pop" }, 
@@ -24,7 +13,7 @@ genres = Genre.create([
 ])
 
 user1 = User.create(username: "bestfan", email: "bestfan@bestfan.com", 
-password: "Hunter12", is_artist: false, genre_id: 1, artistName: "", location: "")
+password: "Hunter12", is_artist: false, genre_id: 1, aristName: "", location: "")
 user2 = User.create(username: "mikehemingway", email: "hemingway@bestfan.com", password: "Hunter12",
 is_artist: false, genre_id: 1, artistName: "", location: "")
 user3 = User.create(username: "bestartist", email: "bestartist@bestartist.com", password: "Hunter12",
@@ -65,10 +54,10 @@ track18 = Track.create(title: "It's Not", artist_id: 4, downloadable: false, gen
 track19 = Track.create(title: "Tantalizing", artist_id: 4, downloadable: false, genre_id: 6, album_id: 5, track_number: 3)
 track20 = Track.create(title: "Summer Somewhere", artist_id: 4, downloadable: true, genre_id: 6, track_number: 1 )
 track21 = Track.create(title: "Never been", artist_id: 4, downloadable: true, genre_id: 6, track_number: 1 )
-track22 = Track.create(title: "As Ever", artist_id: 5, downloadable: true, genre_id: 5, album_id: 6, track_number: 1 )
-track23 = Track.create(title: "Bright Lights", artist_id: 5, downloadable: true, genre_id: 5, album_id: 6, track_number: 2 )
-track24 = Track.create(title: "Moving Day", artist_id: 5, downloadable: true, genre_id: 5, album_id: 6, track_number: 3 )
-track25 = Track.create(title: "When I'm With You(I Can't Leave)", artist_id: 5, downloadable: true, genre_id: 5, album_id: 6, track_number: 4 )
-track26 = Track.create(title: "Ocean Watching in the Evening", artist_id: 5, downloadable: true, genre_id: 5, album_id: 6, track_number: 5 )
-track27 = Track.create(title: "Flowers on the Grass", artist_id: 5, downloadable: true, genre_id: 5, album_id: 6, track_number: 6 )
-track28 = Track.create(title: "That's Why it Breaks My Heart", artist_id: 5, downloadable: true, genre_id: 5, album_id: 6, track_number: 7 )
+track22 = Track.create(title: "As Ever", artist_id: 5, downloadable: true, genre_id: 4, album_id: 6, track_number: 1 )
+track23 = Track.create(title: "Bright Lights", artist_id: 5, downloadable: true, genre_id: 4, album_id: 6, track_number: 2 )
+track24 = Track.create(title: "Moving Day", artist_id: 5, downloadable: true, genre_id: 4, album_id: 6, track_number: 3 )
+track25 = Track.create(title: "When I'm With You(I Can't Leave)", artist_id: 5, downloadable: true, genre_id: 4, album_id: 6, track_number: 4 )
+track26 = Track.create(title: "Ocean Watching in the Evening", artist_id: 5, downloadable: true, genre_id: 4, album_id: 6, track_number: 5 )
+track27 = Track.create(title: "Flowers on the Grass", artist_id: 5, downloadable: true, genre_id: 4, album_id: 6, track_number: 6 )
+track28 = Track.create(title: "That's Why it Breaks My Heart", artist_id: 5, downloadable: true, genre_id: 4, album_id: 6, track_number: 7 )

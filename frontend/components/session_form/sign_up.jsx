@@ -10,7 +10,7 @@ class SignupForm extends React.Component {
             is_artist: false,
             artistName: "",
             location: "",
-            genre_id: 0
+            genre_id: 1
         }
 
 
@@ -33,7 +33,7 @@ class SignupForm extends React.Component {
 
     updateGenre() {
         return (e) => {
-            this.setState({genre_id: Number(e.target.value) + 1})
+            this.setState({genre_id: Number(e.target.value) + 2})
         }
     }
 
@@ -182,7 +182,7 @@ class SignupForm extends React.Component {
                     </div>
                     <div className='signup-footer'>
                 <p>Already have an account? Log in { this.props.otherForm }</p>
-                <button onClick={this.demoUser}>demo user</button>
+                <button className="demo-user-button"onClick={this.demoUser}>demo user</button>
                 {this.renderErrors()}
                 </div>
             </div>

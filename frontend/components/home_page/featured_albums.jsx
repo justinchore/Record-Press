@@ -8,7 +8,7 @@ class FeaturedAlbums extends React.Component {
     render() {
         return (
             <div>
-            <div className="featured-albums-container">
+            {/* <div className="featured-albums-container">
                 <div className="albums-show-container">
                     albums show
                     <div className="main-featured-album-container">
@@ -24,7 +24,7 @@ class FeaturedAlbums extends React.Component {
                         </div>
 
             </div>
-            </div>
+            </div> */}
     </div>
               
          )

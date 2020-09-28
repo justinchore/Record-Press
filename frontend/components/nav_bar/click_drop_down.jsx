@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 class ClickDropDown extends React.Component {
@@ -35,7 +36,7 @@ class ClickDropDown extends React.Component {
                         id="dropdown-items">
                          <div className="dropdown-list-item-first">
                         <li className= "dropdown-username">
-                            {this.props.currentUser.username}
+                            <Link to={`/users/${this.props.currentUser.id}`}>{this.props.currentUser.username}</Link>
                         </li>
                         <li className= "dropdown-first-footer">
                             view site
