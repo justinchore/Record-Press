@@ -39,7 +39,7 @@ export const createUser = user => dispatch => {
 }
 
 export const fetchUser = userId => dispatch => {
-    return APIUtil.fetchUser(userId).then(user => dispatch(receiveUser(user)), err => dispatch(receiveUserErrors(err.responseJSON)))
+    return APIUtil.fetchUser(userId).then(user => dispatch(receiveUser(user)))
 } 
 
 

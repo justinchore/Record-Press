@@ -61,3 +61,237 @@ track25 = Track.create(title: "When I'm With You(I Can't Leave)", artist_id: 5, 
 track26 = Track.create(title: "Ocean Watching in the Evening", artist_id: 5, downloadable: true, genre_id: 4, album_id: 6, track_number: 5 )
 track27 = Track.create(title: "Flowers on the Grass", artist_id: 5, downloadable: true, genre_id: 4, album_id: 6, track_number: 6 )
 track28 = Track.create(title: "That's Why it Breaks My Heart", artist_id: 5, downloadable: true, genre_id: 4, album_id: 6, track_number: 7 )
+
+
+
+
+genres = Genre.create([
+    { genre_name: "None"},
+    { genre_name: "Pop" }, 
+    { genre_name: "Rock" }, 
+    { genre_name: "Hip-hop" }, 
+    { genre_name: "Alternative" }, 
+    { genre_name: "Folk" }, 
+    { genre_name: "Jazz" }, 
+    { genre_name: "Classical" }, 
+    { genre_name: "Metal" }, 
+    { genre_name: "Electronic" }, 
+    { genre_name: "Soundtrack" }, 
+])
+
+# User.destroy_all
+
+fans = User.create([
+    {
+        username: "bestfan",
+        email: "bestfan@bestfan.com", 
+        password: "Hunter12", 
+        is_artist: false,
+        genre_id: 1,
+        artistName: "",
+        location: "",
+    },
+
+    {
+        username: "mikehemingway",
+        email: "hemingway@bestfan.com", 
+        password: "Hunter12", 
+        is_artist: false,
+        genre_id: 1,
+        artistName: "",
+        location: "",
+    }
+    
+])
+
+artists = User.create([
+    {
+       username: "bestartist",
+       email: "bestartist@bestartist.com", 
+       password: "Hunter12", 
+       is_artist: true,
+       artistName: "BESTBANDEVER",
+       location: "Antartica",
+       genre_id: 2
+    }, 
+    
+    {
+       username: "justinchore",
+       email: "justinchore@bestartist.com", 
+       password: "Hunter12", 
+       is_artist: true,
+       artistName: "Toughtimes",
+       location: "California",
+       genre_id: 6
+
+    }
+])
+
+# Album.destroy_all
+albums = Album.create([
+    {
+       title: "Westside Forever",
+       artist_id: 3, 
+       downloadable: true, 
+       genre_id: 2
+    }, 
+    {
+        title: "Time to Fly",
+        artist_id: 3, 
+        downloadable: true, 
+        genre_id: 2
+    },
+    {
+       title: "Tomorrow is a Long Time",
+       artist_id: 4, 
+       downloadable: true, 
+       genre_id: 6
+    }, 
+    {
+       title: "Freewheeling",
+       artist_id: 4, 
+       downloadable: true, 
+       genre_id: 6
+    }, 
+])
+# Track.destroy_all
+
+tracks = Track.create([
+    {
+       title: "Time to Go",
+       artist_id: 3, 
+       downloadable: true, 
+       genre_id: 2,
+       album_id: 1, 
+       track_number: 1 
+    }, 
+
+    {
+       title: "Sure Thing",
+       artist_id: 3, 
+       downloadable: true,  
+       genre_id: 2,
+       album_id: 1, 
+       track_number: 2
+    }, 
+    {
+       title: "Closing Time",
+       artist_id: 3, 
+       downloadable: true, 
+       genre_id: 2,
+       album_id: 1,
+       track_number: 3
+    }, 
+
+    {
+       title: "American Pie",
+       artist_id: 4, 
+       downloadable: true, 
+       genre_id: 3,
+       track_number: 1 
+    },
+
+    {
+        title: "No Album", 
+        artist_id: 4, 
+        downloadable: true, 
+        genre_id: 3, 
+        track_number: 1 
+    },
+
+    {
+       title: "Going to the place",
+       artist_id: 3, 
+       downloadable: true, 
+       genre_id: 3,
+       track_number: 1, 
+       album_id: 2
+
+    },
+
+    {
+       title: "Monday Blues",
+       artist_id: 3, 
+       downloadable: true, 
+       genre_id: 3,
+       track_number: 2,
+       album_id: 2
+
+    },
+
+    {
+        title: "Don't Go There",
+       artist_id: 4, 
+       downloadable: true, 
+       genre_id: 3,
+       track_number: 1,
+       album_id: 3
+    },
+
+    {
+        title: "Burning Fast",
+       artist_id: 4, 
+       downloadable: true, 
+       genre_id: 3,
+       track_number: 2,
+       album_id: 3
+    },
+
+    {
+        title: "Ocean",
+       artist_id: 4, 
+       downloadable: true, 
+       genre_id: 3,
+       track_number: 3,
+       album_id: 3
+    },
+
+    {
+        title: "New Sun",
+       artist_id: 4, 
+       downloadable: true, 
+       genre_id: 3,
+       track_number: 1,
+       album_id: 4
+    },
+
+        {
+        title: "Mountains",
+        artist_id: 4, 
+       downloadable: true, 
+       genre_id: 3,
+       track_number: 2,
+       album_id: 4
+    },
+
+        {
+        title: "Living",
+        artist_id: 4, 
+       downloadable: true, 
+       genre_id: 3,
+       track_number: 3,
+       album_id: 4
+    },
+
+        {
+        title: "Time to Go",
+       artist_id: 4, 
+       downloadable: true, 
+       genre_id: 3,
+       track_number: 4,
+       album_id: 4
+    },
+
+        {
+        title: "I See You",
+        artist_id: 4, 
+       downloadable: true, 
+       genre_id: 3,
+       track_number: 5,
+       album_id: 4
+    },
+
+    
+
+
+])

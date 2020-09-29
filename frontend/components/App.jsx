@@ -23,11 +23,11 @@ const App = () =>  {
     return (
     <>    
         <Modal/>
-        <header>
+        <header >
              <HomeBarContainer/> 
         </header>
 
-        <section>
+        <section style={{ paddingTop: "150px" }}>
         <Switch>
          {/* <Route exact path = "/" component= {HomePageContainer} /> */}
          <Route exact path="/users/:userId" component={ArtistPageContainer}/>

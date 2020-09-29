@@ -334,8 +334,6 @@ var fetchUser = function fetchUser(userId) {
   return function (dispatch) {
     return _util_user_api_util__WEBPACK_IMPORTED_MODULE_1__["fetchUser"](userId).then(function (user) {
       return dispatch(receiveUser(user));
-    }, function (err) {
-      return dispatch(receiveUserErrors(err.responseJSON));
     });
   };
 };
@@ -378,7 +376,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var App = function App() {
   // console.log("APP")
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal__WEBPACK_IMPORTED_MODULE_10__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_home_bar_container__WEBPACK_IMPORTED_MODULE_5__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal__WEBPACK_IMPORTED_MODULE_10__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_home_bar_container__WEBPACK_IMPORTED_MODULE_5__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    style: {
+      paddingTop: "150px"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/users/:userId",
     component: _artist_page_artist_page_container__WEBPACK_IMPORTED_MODULE_8__["default"]
@@ -434,9 +436,18 @@ var ArtistPage = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(ArtistPage);
 
   function ArtistPage(props) {
+    var _this;
+
     _classCallCheck(this, ArtistPage);
 
-    return _super.call(this, props);
+    _this = _super.call(this, props);
+    _this.state = {};
+    _this.renderReleases = _this.renderReleases.bind(_assertThisInitialized(_this));
+    _this.renderAlbums = _this.renderAlbums.bind(_assertThisInitialized(_this));
+    _this.albums_collection = _this.albums_collection.bind(_assertThisInitialized(_this));
+    _this.tracks_collection = _this.tracks_collection.bind(_assertThisInitialized(_this)); // this.getMainRelease = this.getMainRelease.bind(this);
+
+    return _this;
   }
 
   _createClass(ArtistPage, [{
@@ -447,11 +458,169 @@ var ArtistPage = /*#__PURE__*/function (_React$Component) {
       this.props.fetchArtistsTracks(this.props.userId);
     }
   }, {
+    key: "albums_collection",
+    value: function albums_collection() {
+      var albums_obj = this.props.albums[0];
+      var albums_collection = Object.values(albums_obj);
+      return albums_collection;
+    }
+  }, {
+    key: "tracks_collection",
+    value: function tracks_collection() {
+      var tracks_obj = this.props.tracks[0];
+      var all_tracks = Object.values(tracks_obj);
+      var tracks_collection = [];
+      all_tracks.forEach(function (track) {
+        if (track.album_id === null) {
+          tracks_collection.push(track);
+        }
+      });
+      return tracks_collection;
+    }
+  }, {
+    key: "getMainRelease",
+    value: function getMainRelease() {
+      var tracks = this.renderTracks();
+      var albums = this.renderAlbums();
+      var releases;
+
+      if (tracks && albums) {
+        releases = tracks.concat(albums);
+      } else if (!tracks && albums) {
+        releases = albums;
+      } else if (tracks && !albums) {
+        releases = tracks;
+      } else {
+        console.log("hit null!");
+        return null;
+      }
+
+      releases.sort(function (a, b) {
+        var keyA = new Date(a.created_at),
+            keyB = new Date(b.created_at); // Compare the 2 dates
+
+        if (keyA < keyB) return -1;
+        if (keyA > keyB) return 1;
+        return 0;
+      });
+      debugger;
+
+      if (releases.length != 0) {
+        var mainRelease = releases[0];
+
+        if (mainRelease.album_id === undefined) {
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, mainRelease.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "ALBUM ARTWORK "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, mainRelease.artist_name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "MUSIC PLAYER"), mainRelease.tracks.map(function (track, i) {
+            return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+              key: i
+            }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "play"), " ", track.track_number, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, track.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "duration"));
+          }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, mainRelease.album_notes), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "released ", this.getFullDate()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, mainRelease.credits));
+        } else if (mainRelease.album_id === null) {
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, mainRelease.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "TRACK ARTWORK "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, mainRelease.artist_name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "MUSIC PLAYER"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "play"), " ", mainRelease.track_number, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, mainRelease.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "duration")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, mainRelease.track_notes), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "released ", this.getFullDate()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, mainRelease.credits));
+        }
+      } else {
+        return null;
+      }
+    }
+  }, {
+    key: "renderSideBar",
+    value: function renderSideBar() {}
+  }, {
+    key: "getFullDate",
+    value: function getFullDate(date) {
+      var date_obj = new Date(date);
+      var month = date_obj.toLocaleString('default', {
+        month: 'long'
+      });
+      var day = date_obj.getDay();
+      var year = date_obj.getFullYear();
+      return month + " " + day + " " + year;
+    }
+  }, {
+    key: "renderReleases",
+    value: function renderReleases() {
+      var _this2 = this;
+
+      var tracks = this.renderTracks();
+      var albums = this.renderAlbums();
+      var releases;
+
+      if (tracks && albums) {
+        releases = tracks.concat(albums);
+      } else if (!tracks && albums) {
+        releases = albums;
+      } else if (tracks && !albums) {
+        releases = tracks;
+      } else {
+        return null;
+      }
+
+      releases.sort(function (a, b) {
+        var keyA = new Date(a.created_at),
+            keyB = new Date(b.created_at); // Compare the 2 dates
+
+        if (keyA < keyB) return -1;
+        if (keyA > keyB) return 1;
+        return 0;
+      });
+      return releases.map(function (release, i) {
+        if (release.album_notes) {
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            key: i
+          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "ARTWORK ELEMENT"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, release.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, _this2.makeDate(release.created_at)));
+        } else {
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            key: i
+          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "ARTWORK ELEMENT"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, release.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, _this2.makeDate(release.created_at)));
+        }
+      });
+    }
+  }, {
+    key: "makeDate",
+    value: function makeDate(date) {
+      var date_obj = new Date(date);
+      var month = date_obj.toLocaleString('default', {
+        month: 'long'
+      });
+      var year = date_obj.getFullYear();
+      return month + " " + year;
+    }
+  }, {
+    key: "renderTracks",
+    value: function renderTracks() {
+      if (this.props.tracks.length > 0) {
+        // return this.tracks_collection().map((track, i) => (
+        //     <div key={i}>
+        //         <li>{track.title}</li>
+        //     </div>
+        // ))
+        return this.tracks_collection();
+      } else {
+        return null;
+      }
+    }
+  }, {
+    key: "renderAlbums",
+    value: function renderAlbums() {
+      if (this.props.albums.length > 0) {
+        //   return this.albums_collection().map((album, i) => (
+        //       <div key={i}>
+        //           <li>{album.title}</li>
+        //       </div>
+        //   ))
+        return this.albums_collection();
+      } else {
+        return null;
+      }
+    }
+  }, {
+    key: "renderMainRelease",
+    value: function renderMainRelease() {}
+  }, {
     key: "render",
     value: function render() {
-      console.log("!!"); // this.props.fetchArtistsTracks(userId); 
+      console.log("rendering"); // console.log(this.renderReleases())
 
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Artist Show Page");
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.getMainRelease()), this.renderReleases());
     }
   }]);
 
