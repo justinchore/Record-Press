@@ -1,0 +1,177 @@
+.main-artist-page-container {
+    margin: 0 auto 80px;
+    width: 1010px; 
+    border: 1px solid #fff;
+    border-top: none; 
+    background-color: white; 
+    padding: 0 0 85px;
+}
+
+// .main-artist-subcontainer {
+  
+//  }
+
+.main-artist-banner {
+    height: 180px; 
+    width: 100%;
+    object-fit: cover; 
+    object-position: 50% 30%;
+    border-bottom: solid 1px  #ffff;
+}
+
+.album-content-house {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    // padding: 0 36px 0;
+    padding: 41px 59px 0;
+    box-sizing: border-box;
+    border: 1px solid rgb(218, 218, 218);
+    padding-bottom: 200px;
+}
+
+.artist-page-column-1 {
+    display: flex;
+    flex-direction: column;
+    width: 376px;
+    height: 100%;
+
+}
+
+.album-header {
+     font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.album-title-text {
+    font-size: 28px;
+    margin: -3px 0 8px;
+    color: #363030;
+}
+
+.album-header-artistName {
+    font-size: 14px;
+    color: #363030;
+}
+
+.artist-player {
+    margin: 24px 0 24px;
+}
+
+.track-list {
+     vertical-align: baseline;
+}
+
+ul {
+  list-style: none;
+}
+
+.artist-track-items {
+    font-size: 12px;
+    color: #363030;
+    padding-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.track-inner-wrap {
+    display: flex;
+}
+
+.track-toggle-button {
+    width: 19px;
+    height: 18px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #d9d9d9;
+    box-sizing: border-box;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.track-text {
+    margin-top: 3px;
+    padding-right: 2px;
+    color: #50494B;
+}
+
+
+.artist-page-column-2 {
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    width: 350px;
+    height: 100%;
+}
+
+.album-photo {
+    height: 350px;
+    width: 350px;
+}
+
+.album-photo img {
+    background-position: 50% 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.artist-page-column-3 {
+    width: 120px;
+    padding-left: 45px;
+    display: block; 
+}
+
+.artist-page-column-3 img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 14px;
+}
+
+.artist-side-name {
+    font-size: 14px;
+    font-weight: bold;
+    border-top: 0;
+    margin: 0 0 3px;
+    display: block;
+    color: #363030;
+}
+
+.artist-side-location {
+ font-size: 12px;
+    color: #50494B;
+    display: block;
+    line-height: 1.25em;
+    margin: 0 0 12px;
+}
+
+.discog-bar {
+    padding-top: 45px;
+}
+
+.discog-sidebar-text {
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0 0 1.25em;
+    color: #363030;
+}
+
+.artist-page-column-3 ul {
+    padding-top: 10px;
+}
+
+.discog-item-wrapper {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.other-works {
+    width: 120px;
+    height: 68px;
+    object-fit: cover;
+    display: block;
+}

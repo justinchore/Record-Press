@@ -2,6 +2,7 @@ import * as TrackUtil from '../util/track_api_util'
 
 export const RECEIVE_TRACK = 'RECEIVE_TRACK';
 export const RECEIVE_TRACKS = 'RECEIVE_TRACKS';
+export const CLEAR_TRACKS = 'CLEAR_TRACKS'
 
 export const receiveTrack = track => ({
     type: RECEIVE_TRACK,
@@ -16,6 +17,12 @@ export const receiveTracks = tracks => {
     }
 }
 
+export const clearTracks = () => {
+    return {
+        type: CLEAR_TRACKS
+    }
+}
+
 export const fetchArtistsTracks = userId => dispatch => {
     //  debugger
     return TrackUtil.fetchArtistsTracks(userId)
@@ -23,4 +30,7 @@ export const fetchArtistsTracks = userId => dispatch => {
             // debugger
             dispatch(receiveTracks(tracks))
         })
+}
+export const fetchTracks = () => disapatch => {
+    return TrackUtil.fetchTracks().then(tracks=> {dispatch(receiveTracks(tracks))})
 }

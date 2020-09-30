@@ -19,7 +19,7 @@ class Track < ApplicationRecord
         class_name: :Genre 
 
     
-        has_one_attached :track_artwork
+    has_one_attached :track_artwork
     has_one_attached :song_file
 
 end

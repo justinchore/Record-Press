@@ -5,6 +5,7 @@ export const CREATE_USER = 'CREATE_USER';
 export const RECEIVE_USER = 'RECEIVE_USER'; 
 export const RECEIVE_USERS = 'RECEIVE_USERS'; 
 export const RECEIVE_USER_ERRPRS = 'RECEIVE_USER_ERRORS'
+export const CLEAR_USERS = 'CLEAR_USERS'
 
 export const addUser = (currentUser) => {
     return {
@@ -34,6 +35,12 @@ export const receiveUserErrors = (errors) => {
     }
 }
 
+export const clearUsers = () => {
+    return {
+        type: CLEAR_USERS
+    }
+}
+
 export const createUser = user => dispatch => {
     return APIUtil.createUser(user).then(user => dispatch(addUser(user)))
 }
@@ -41,5 +48,9 @@ export const createUser = user => dispatch => {
 export const fetchUser = userId => dispatch => {
     return APIUtil.fetchUser(userId).then(user => dispatch(receiveUser(user)))
 } 
+
+// export const fetchUsers = () => dispatch => {
+//     return APIUtil.fetchUsers().then(users => dispatch(receiveUsers(users)))
+// }
 
 

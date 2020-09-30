@@ -27,7 +27,7 @@ const App = () =>  {
              <HomeBarContainer/> 
         </header>
 
-        <section style={{ paddingTop: "150px" }}>
+        <section style={{ paddingTop: "107px" }}>
         <Switch>
          {/* <Route exact path = "/" component= {HomePageContainer} /> */}
          <Route exact path="/users/:userId" component={ArtistPageContainer}/>
