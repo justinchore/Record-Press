@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
 import TrackContainer from './tracks_container';
-import TrackPlayer from '../trackplayer/track_player';
+import TrackPlayerContainer from '../trackplayer/track_player_container';
 
 class ArtistPage extends React.Component {
     constructor(props){
@@ -17,13 +17,13 @@ class ArtistPage extends React.Component {
         this.props.fetchUser(this.props.userId);
     }
 
-    // componentDidUpdate(prevProps) {
-    //     if (this.props.match.params.userId !== prevProps.match.params.userId) {
-    //         this.props.fetchArtistsAlbums(this.props.userId);
-    //         this.props.fetchArtistsTracks(this.props.userId);
-    //         this.props.fetchUser(this.props.userId);
-    //     }
-    // }
+    componentDidUpdate(prevProps) {
+        if (this.props.match.params.userId !== prevProps.match.params.userId) {
+            this.props.fetchArtistsAlbums(this.props.userId);
+            this.props.fetchArtistsTracks(this.props.userId);
+            this.props.fetchUser(this.props.userId);
+        }
+    }
 
     // componentWillUnmount() {
     //     // this.props.setTrack();
@@ -93,7 +93,7 @@ class ArtistPage extends React.Component {
                     const discography = discog.map(release => (
                     <li key={release.id}>
                         <div className="discog-item-wrapper">
-                        <div className = 'other-works'><img src={release.picUrl}/></div>
+                        <div><img className="discog-image"src={release.picUrl}/></div>
                         <p>{release.title}</p>
                         <p>{this.make_half_dates(release.created_at)}</p>
                         </div>
@@ -101,8 +101,9 @@ class ArtistPage extends React.Component {
 
                     
                 ))
-                debugger
+               debugger 
                  return(
+                     <div className="full-artist-background">
                      <div className="main-artist-page-container">
                          <div className="main-artist-subcontainer">
                          <div className="main-artist-banner"> </div>
@@ -110,10 +111,10 @@ class ArtistPage extends React.Component {
                              <div className="artist-page-column-1">
                                 <div album = "album-header">
                                      <div className="album-title-text">{mainRelease.title}</div>
-                                     <p className="album-header-artistName ">{mainRelease.artist_name}</p>
+                                         <p className="album-header-artistName ">by &nbsp;{mainRelease.artist_name}</p>
                                  </div>
                                  <div className="artist-player">
-                                         <TrackPlayer tracks={tracks} playTrack={this.props.playTrack} pauseTrack={this.props.pauseTrack} trackSet={this.props.trackSet}/>
+                                         <TrackPlayerContainer/>
                                  </div>
                                  <div className="track-list">
                                      <ul>
@@ -126,7 +127,7 @@ class ArtistPage extends React.Component {
                                  </div>
 
                                  <div>
-                                         <p>released &nbsp; {mainRelease.created_at} </p>
+                                        <p>released &nbsp;{this.make_half_dates(mainRelease.created_at)} </p>
                                  </div>
                              </div>
                              
@@ -151,6 +152,7 @@ class ArtistPage extends React.Component {
                             
                             </div>
                          </div>
+                     </div>
                      </div>
                  )
         }

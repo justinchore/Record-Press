@@ -30,3 +30,7 @@ export const fetchArtistsAlbums = artistId => dispatch => {
         // debugger
         dispatch(receiveAlbums(albums))
 })}
+
+export const fetchAlbums = () => dispatch => {
+    return AlbumUtil.fetchAlbums().then(albums=> dispatch(receiveAlbums(albums)))
+}

@@ -1,0 +1,108 @@
+.home-page-mid-banner {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 25px 0 25px;
+    position: relative;
+    text-align: center;
+    font-weight: 400;
+    font-family: Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: #fdfdfd;
+}
+
+.bold-in-banner {
+    font-weight: 700;
+    color: #1DA0C3;
+    font-size: 18px;
+}
+
+.new-and-notable-container {
+    padding: 20px 0 36px;
+    height: 468px;
+    background: #ECECEC;
+}
+
+.n-n-clear {
+    clear: both;
+    margin: 0 auto;
+    width: 1106px;
+}
+
+.n-n-clear h3{
+    font-family: Helvetica, Arial, sans-serif;
+    color: #1DA0C3;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 18px;
+    text-transform: uppercase;
+    min-height: 1px;
+    position: relative;
+}
+
+.n-n-list {
+     list-style: none;
+}
+
+.n-n-item {
+    // float: left;
+    min-height: 1px;
+    position: relative;
+    width: 17%;
+    overflow: hidden;
+    margin-left: 2.45%;
+    display: inline-block;
+    align-items: center;
+}
+// .n-n-list >li:first-of-type {
+
+// }
+.n-n-item-inner {
+    min-height: 310px;
+    width: 100%;
+    background-color: #fdfdfd;
+    box-shadow: 0 0 1px 0 #dfdfdf;
+    display: inline-block;
+}
+
+.inner2-item {
+    padding: 100% 0 0;
+    display: block;
+    height: 0;
+    font-size: 0;
+    // overflow: hidden;
+    position: relative;
+  
+}
+
+.n-n-artwork {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    left: 0;
+    outline: 1px solid rgba(0,0,0,0.05);
+    outline-offset: -1px;
+    position: absolute;
+    top: 0;
+}
+
+.n-n-release-info {
+    padding: 0 10px;
+}
+
+.n-n-album-title {
+    line-height: 18px;
+    margin: 0;
+    // padding: 0 10px;
+    margin-top: 9px;
+}
+
+.n-n-album-artist {
+    line-height: 18px;
+    margin: 0;
+    // padding: 0 10px;
+    margin-top: 8px;
+}
+
+
+

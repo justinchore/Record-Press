@@ -5,7 +5,8 @@ const tracksReducer = (state = {}, action) => {
     switch (action.type) {
     
         case RECEIVE_TRACKS:
-            return Object.assign({}, state, action.tracks)
+            return action.tracks;
+
          case CLEAR_TRACKS: 
             return {}; 
         default:

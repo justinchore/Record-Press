@@ -29,7 +29,7 @@ const App = () =>  {
 
         <section style={{ paddingTop: "107px" }}>
         <Switch>
-         {/* <Route exact path = "/" component= {HomePageContainer} /> */}
+         <Route exact path = "/" component= {HomePageContainer} />
          <Route exact path="/users/:userId" component={ArtistPageContainer}/>
         <AuthRoute exact path="/login" component={ LoginContainer } /> 
         {/* <AuthRoute exact path="/signup" className="signup-page" component={SignupContainer} /> */}

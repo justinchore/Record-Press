@@ -10,9 +10,9 @@ class Tracks extends React.Component {
 
     toggleIcon() {
           if (this.props.isPlaying && this.props.currentTrack.id === this.props.track.id) {
-            return <i className="playing-small-icon" />
+              return <i className="fas fa-play" />
         } else {
-            return <i className="paused-small-icon" />
+              return <i className="fas fa-pause" />
         }
     }
 
@@ -37,10 +37,12 @@ class Tracks extends React.Component {
         return(
             <li className="<div artist-track-items">
                 <div className="track-inner-wrap">
-                    <span
-                        className="track-toggle-button"
-                        onClick={this.changeTrack}>
-                        {this.toggleIcon()}
+                    <span>
+                        {/* // className="play-pause-button-container">
+                        // {/* // onClick={this.changeTrack}> */}
+                        {/* // {this.toggleIcon()} */}
+                        <div className="track-play-button"><i className="fas fa-play"></i></div>
+
                     </span>
                     <span className='track-text'>
                         {track.track_number}.&nbsp;

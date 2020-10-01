@@ -10,11 +10,13 @@ class TrackPlayer extends React.Component {
 
     render() {
        debugger
-        const { tracks } = this.props
-        // console.log(tracks[0].trackUrl)
+        const { tracks, tracksObj } = this.props
+        if (tracksObj.length === 0) {
+            return null
+        }
         return (
             <div>
-                <audio controls="controls" src={tracks[0].trackUrl} ></audio>
+                <audio controls="controls" src={tracksObj[0].trackUrl} ></audio>
             </div>
         )
     }
