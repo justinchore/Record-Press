@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 class FeaturedAlbums extends React.Component {
     constructor(props) {
@@ -22,18 +23,20 @@ class FeaturedAlbums extends React.Component {
                     albums show
                     <div className="featured-albums-container-2">
                     <div className="main-featured-album-container">
-                        
+                        <Link to={`/users/${mainFeatured.artist_id}`}>
                         <div className="main-feature-details"
                             style={this.getImage(mainFeatured)}>
                             <p className="main-feature-title-text">{mainFeatured.title}</p>
                             <p className="main-feature-artist-text">{mainFeatured.artist_name}</p>
                         </div>
+                        </Link>
                         
                     </div>
                    
                         <ul className="sub-artists-container">
                         
                             <li className="sub-album1">
+                                
                                 <div className="sub-feature-wrap"
                                     style={this.getImage(subAlbum1)}>
                                         <p className="sub-feature-title-text">{subAlbum1.title}</p>
