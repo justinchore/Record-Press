@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_28_234206) do
+ActiveRecord::Schema.define(version: 2020_09_26_221053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,13 +47,6 @@ ActiveRecord::Schema.define(version: 2020_09_28_234206) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "genre_joins", force: :cascade do |t|
-    t.string "genreable_type"
-    t.bigint "genreable_id"
-    t.integer "genre_id"
-    t.index ["genreable_type", "genreable_id"], name: "index_genre_joins_on_genreable_type_and_genreable_id"
-  end
-
   create_table "genres", force: :cascade do |t|
     t.string "genre_name"
     t.datetime "created_at", null: false
@@ -69,10 +62,10 @@ ActiveRecord::Schema.define(version: 2020_09_28_234206) do
     t.string "lyrics", default: ""
     t.string "credits", default: ""
     t.boolean "downloadable", default: true
+    t.integer "genre_id", null: false
+    t.integer "track_number", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "track_number", null: false
-    t.integer "genre_id", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -80,12 +73,12 @@ ActiveRecord::Schema.define(version: 2020_09_28_234206) do
     t.string "email", null: false
     t.string "password_digest", null: false
     t.string "session_token", null: false
+    t.string "location", default: "", null: false
+    t.boolean "is_artist", default: false, null: false
+    t.string "artistName", default: ""
+    t.integer "genre_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "artistName", default: ""
-    t.boolean "is_artist", default: false
-    t.string "location", default: ""
-    t.integer "genre_id", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true

@@ -6,10 +6,9 @@ class CreateAlbums < ActiveRecord::Migration[5.2]
         t.string :credits, default: "" 
         t.string :title, null: false
         t.boolean :downloadable, default: true 
-        t.string :genre, null: false; 
-        t.integer :release_id
+        t.integer :genre_id, null: false; 
+        t.timestamps
     end
-    add_index :albums, :title 
   end
 
 

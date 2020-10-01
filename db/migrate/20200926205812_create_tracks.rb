@@ -8,7 +8,8 @@ class CreateTracks < ActiveRecord::Migration[5.2]
         t.string :lyrics, default: "" 
         t.string :credits, default: "" 
         t.boolean :downloadable, default: true
-        t.string :genre, null: false
+        t.integer :genre_id, null: false
+        t.integer :track_number, null: false
       t.timestamps
     end
   end

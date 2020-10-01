@@ -5,9 +5,10 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :email, null: false 
       t.string :password_digest, null: false
       t.string :session_token, null: false 
-      t.string :location, null: false 
-      t.boolean :is_artist, null: false 
+      t.string :location, null: false, default: ""
+      t.boolean :is_artist, null: false, default: false
       t.string :artistName, default: ""
+      t.integer :genre_id
 
 
       t.timestamps
