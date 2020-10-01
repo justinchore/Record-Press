@@ -16,7 +16,6 @@ class HomePage extends React.Component {
     }
 
     newAndNotableList(albumArr) {
-    debugger
        return albumArr.slice(1).map(album => (
              
                 <li key={album.created_at} className="n-n-item">

@@ -14,7 +14,7 @@ class FeaturedAlbums extends React.Component {
         let subAlbum1 = this.props.albumArr[2]
         let subAlbum2 = this.props.albumArr[3]
         let subAlbum3 = this.props.albumArr[5]
-        debugger
+    
         return (
             <div>
             <div className="featured-albums-container">

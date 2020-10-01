@@ -9,7 +9,7 @@ class TrackPlayer extends React.Component {
     }
 
     render() {
-       debugger
+    //    debugger
         const { tracks, tracksObj } = this.props
         if (tracksObj.length === 0) {
             return null

@@ -627,8 +627,8 @@ var ArtistPage = /*#__PURE__*/function (_React$Component) {
             className: "discog-image",
             src: release.picUrl
           })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, release.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, _this.make_half_dates(release.created_at))));
-        });
-        debugger;
+        }); //    debugger 
+
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "full-artist-background"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1003,7 +1003,6 @@ var FeaturedAlbums = /*#__PURE__*/function (_React$Component) {
       var subAlbum1 = this.props.albumArr[2];
       var subAlbum2 = this.props.albumArr[3];
       var subAlbum3 = this.props.albumArr[5];
-      debugger;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "featured-albums-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1147,7 +1146,6 @@ var HomePage = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "newAndNotableList",
     value: function newAndNotableList(albumArr) {
-      debugger;
       return albumArr.slice(1).map(function (album) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: album.created_at,
@@ -2395,7 +2393,7 @@ var TrackPlayer = /*#__PURE__*/function (_React$Component) {
   _createClass(TrackPlayer, [{
     key: "render",
     value: function render() {
-      debugger;
+      //    debugger
       var _this$props = this.props,
           tracks = _this$props.tracks,
           tracksObj = _this$props.tracksObj;
@@ -2435,7 +2433,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  debugger;
+  // debugger
   return {
     tracksObj: Object.values(state.entities.tracks),
     isPlaying: state.ui.isPlaying.playing,

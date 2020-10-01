@@ -5,7 +5,7 @@ import TrackPlayer from './track_player';
 
 
 const mapStateToProps = (state) => {
-    debugger
+    // debugger
     return {
        tracksObj: Object.values(state.entities.tracks),
        isPlaying: state.ui.isPlaying.playing,
