@@ -18,7 +18,7 @@ class HomePage extends React.Component {
     }
 
     componentWillUnmount() {
-        this.props.clearAlbums(); 
+        // this.props.clearAlbums(); 
     }
 
     newAndNotableList(albumArr) {

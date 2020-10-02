@@ -1170,8 +1170,7 @@ var HomePage = /*#__PURE__*/function (_React$Component) {
     }
   }, {
     key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      this.props.clearAlbums();
+    value: function componentWillUnmount() {// this.props.clearAlbums(); 
     }
   }, {
     key: "newAndNotableList",
@@ -2863,7 +2862,7 @@ var tracksReducer = function tracksReducer() {
 
   switch (action.type) {
     case _actions_track_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_TRACKS"]:
-      debugger;
+      // debugger
       return action.tracks;
 
     case _actions_track_actions__WEBPACK_IMPORTED_MODULE_0__["CLEAR_TRACKS"]:
