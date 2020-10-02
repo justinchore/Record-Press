@@ -5,6 +5,7 @@ const tracksReducer = (state = {}, action) => {
     switch (action.type) {
     
         case RECEIVE_TRACKS:
+            debugger
             return action.tracks;
 
          case CLEAR_TRACKS: 

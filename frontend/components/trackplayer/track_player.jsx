@@ -17,6 +17,15 @@ class TrackPlayer extends React.Component {
         }
     }
 
+
+    componentDidUpdate() {
+        if(this.props.isPlaying) {
+            this.audio.current.play()
+        } else {
+            this.audio.current.pause()
+        }
+    }
+
     render() {
         // debugger
         const { tracks, tracksObj } = this.props
@@ -24,10 +33,14 @@ class TrackPlayer extends React.Component {
             // debugger
             return null
         }
-        debugger
+        // debugger
         return (
             <div>
-                <audio controls="controls" src={this.props.currentlyPlaying.trackUrl} ></audio>
+                <audio 
+                    controls="controls"
+                    ref = {this.audio} 
+                    src={this.props.currentlyPlaying.trackUrl} >
+                </audio>
             </div>
         )
     }

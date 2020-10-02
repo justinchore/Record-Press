@@ -19,15 +19,15 @@ class Api::AlbumsController < ApplicationController
     end
 
     def show 
-        # 
         @album = Album.find_by(id: params[:id])
 
         render "api/albums/show"
     end
 
     def index 
-        # debugger
+        debugger
         if params[:userId] 
+            debugger
             @albums = Album.where(artist_id: params[:userId])
             render "api/albums/index"
         else 

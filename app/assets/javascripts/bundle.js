@@ -115,7 +115,7 @@ var receiveAlbum = function receiveAlbum(album) {
   };
 };
 var receiveAlbums = function receiveAlbums(albums) {
-  // debugger 
+  debugger;
   return {
     type: RECEIVE_ALBUMS,
     albums: albums
@@ -128,9 +128,9 @@ var clearAlbums = function clearAlbums() {
 };
 var fetchArtistsAlbums = function fetchArtistsAlbums(artistId) {
   return function (dispatch) {
-    //  debugger
+    debugger;
     return _util_album_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchArtistsAlbums"](artistId).then(function (albums) {
-      // debugger
+      debugger;
       dispatch(receiveAlbums(albums));
     });
   };
@@ -530,19 +530,23 @@ var ArtistPage = /*#__PURE__*/function (_React$Component) {
   _createClass(ArtistPage, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchArtistsAlbums(this.props.userId);
-      this.props.fetchArtistsTracks(this.props.userId);
-      this.props.fetchUser(this.props.userId);
-    }
-  }, {
-    key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps) {
-      if (this.props.match.params.userId !== prevProps.match.params.userId) {
-        this.props.fetchArtistsAlbums(this.props.userId);
-        this.props.fetchArtistsTracks(this.props.userId);
-        this.props.fetchUser(this.props.userId);
-      }
-    } // componentWillUnmount() {
+      var _this = this;
+
+      // debugger
+      this.props.fetchArtistsAlbums(this.props.userId).then(function () {
+        return _this.props.fetchArtistsTracks(_this.props.userId);
+      }).then(function () {
+        return _this.props.fetchUser(_this.props.userId);
+      });
+    } // componentDidUpdate(prevProps) {
+    //     // debugger
+    //     if (this.props.match.params.userId !== prevProps.match.params.userId) {
+    //         this.props.fetchArtistsAlbums(this.props.userId);
+    //         this.props.fetchArtistsTracks(this.props.userId);
+    //         this.props.fetchUser(this.props.userId);
+    //     }
+    // }
+    // componentWillUnmount() {
     //     // this.props.setTrack();
     //     this.props.clearTracks();
     //     this.props.clearAlbums();
@@ -591,7 +595,7 @@ var ArtistPage = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this = this;
+      var _this2 = this;
 
       var _this$props = this.props,
           albums = _this$props.albums,
@@ -626,9 +630,9 @@ var ArtistPage = /*#__PURE__*/function (_React$Component) {
           }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
             className: "discog-image",
             src: release.picUrl
-          })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, release.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, _this.make_half_dates(release.created_at))));
-        }); //    debugger 
-
+          })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, release.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, _this2.make_half_dates(release.created_at))));
+        });
+        debugger;
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "full-artist-background"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -713,8 +717,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
-  var userId = ownProps.match.params.userId; // debugger
-
+  var userId = ownProps.match.params.userId;
+  debugger;
   return {
     user: state.entities.users[userId],
     albums: state.entities.albums,
@@ -845,30 +849,33 @@ var Tracks = /*#__PURE__*/function (_React$Component) {
   _createClass(Tracks, [{
     key: "toggleIcon",
     value: function toggleIcon() {
-      //    if (this.props.isPlaying && this.props.currentTrack.id === this.props.track.id) {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-play"
-      }); //  } else {
-      //    return <i className="fas fa-pause" />
+      // debugger
+      if (this.props.isPlaying && this.props.currentlyPlaying.id === this.props.track.id) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fas fa-pause"
+        });
+      } else {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fas fa-play"
+        });
+      }
     }
   }, {
     key: "changeTrack",
     value: function changeTrack(e) {
-      e.preventDefault();
-      debugger;
+      e.preventDefault(); // debugger
 
       if (this.props.currentlyPlaying.id === this.props.track.id) {
-        debugger;
-
+        // debugger
         if (this.props.isPlaying === true) {
-          debugger;
+          //  debugger
           this.props.pauseTrack();
         } else {
-          debugger;
+          // debugger
           this.props.playTrack();
         }
       } else {
-        debugger;
+        // debugger
         this.props.trackSet(this.props.track);
         this.props.playTrack();
       }
@@ -919,7 +926,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  debugger;
+  // debugger
   return {
     currentlyPlaying: state.ui.currentTrack,
     isPlaying: state.ui.isPlaying.playing
@@ -2422,6 +2429,15 @@ var TrackPlayer = /*#__PURE__*/function (_React$Component) {
       }
     }
   }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      if (this.props.isPlaying) {
+        this.audio.current.play();
+      } else {
+        this.audio.current.pause();
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       // debugger
@@ -2432,11 +2448,12 @@ var TrackPlayer = /*#__PURE__*/function (_React$Component) {
       if (Object.keys(this.props.currentlyPlaying).length === 0) {
         // debugger
         return null;
-      }
+      } // debugger
 
-      debugger;
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("audio", {
         controls: "controls",
+        ref: this.audio,
         src: this.props.currentlyPlaying.trackUrl
       }));
     }
@@ -2846,6 +2863,7 @@ var tracksReducer = function tracksReducer() {
 
   switch (action.type) {
     case _actions_track_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_TRACKS"]:
+      debugger;
       return action.tracks;
 
     case _actions_track_actions__WEBPACK_IMPORTED_MODULE_0__["CLEAR_TRACKS"]:
@@ -2984,6 +3002,7 @@ var fetchAlbums = function fetchAlbums() {
   });
 };
 var fetchArtistsAlbums = function fetchArtistsAlbums(userId) {
+  debugger;
   return $.ajax({
     method: 'GET',
     url: '/api/albums',

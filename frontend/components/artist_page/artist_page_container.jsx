@@ -9,7 +9,7 @@ import { trackSet, playTrack, pauseTrack } from '../../actions/track_player_acti
 const mapStateToProps = (state, ownProps) => {
    
     const userId = ownProps.match.params.userId
-    // debugger
+    debugger
     return {
         user: state.entities.users[userId], 
         albums: state.entities.albums, 

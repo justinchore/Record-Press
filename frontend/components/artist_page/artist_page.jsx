@@ -12,18 +12,20 @@ class ArtistPage extends React.Component {
     }
 
     componentDidMount(){
-        this.props.fetchArtistsAlbums(this.props.userId);
-        this.props.fetchArtistsTracks(this.props.userId);
-        this.props.fetchUser(this.props.userId);
+        // debugger
+        this.props.fetchArtistsAlbums(this.props.userId)
+            .then(() => this.props.fetchArtistsTracks(this.props.userId))
+            .then(() => this.props.fetchUser(this.props.userId));
     }
 
-    componentDidUpdate(prevProps) {
-        if (this.props.match.params.userId !== prevProps.match.params.userId) {
-            this.props.fetchArtistsAlbums(this.props.userId);
-            this.props.fetchArtistsTracks(this.props.userId);
-            this.props.fetchUser(this.props.userId);
-        }
-    }
+    // componentDidUpdate(prevProps) {
+    //     // debugger
+    //     if (this.props.match.params.userId !== prevProps.match.params.userId) {
+    //         this.props.fetchArtistsAlbums(this.props.userId);
+    //         this.props.fetchArtistsTracks(this.props.userId);
+    //         this.props.fetchUser(this.props.userId);
+    //     }
+    // }
 
     // componentWillUnmount() {
     //     // this.props.setTrack();
@@ -101,7 +103,7 @@ class ArtistPage extends React.Component {
 
                     
                 ))
-            //    debugger 
+                debugger 
                  return(
                      <div className="full-artist-background">
                      <div className="main-artist-page-container">

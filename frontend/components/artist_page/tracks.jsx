@@ -9,27 +9,28 @@ class Tracks extends React.Component {
     }
 
     toggleIcon() {
-        //    if (this.props.isPlaying && this.props.currentTrack.id === this.props.track.id) {
-              return <i className="fas fa-play" />
-        //  } else {
-            //    return <i className="fas fa-pause" />
-         
+        // debugger
+           if (this.props.isPlaying && this.props.currentlyPlaying.id === this.props.track.id) {
+               return <i className="fas fa-pause" />
+         } else {
+               return <i className="fas fa-play" />
+         }
     }
 
     changeTrack(e) {
         e.preventDefault();
-        debugger
+        // debugger
         if (this.props.currentlyPlaying.id === this.props.track.id) {
-            debugger
+            // debugger
             if (this.props.isPlaying === true) {
-                 debugger
+                //  debugger
                 this.props.pauseTrack();
             } else {
-                debugger
+                // debugger
                 this.props.playTrack();
             }
         } else {
-            debugger
+            // debugger
             this.props.trackSet(this.props.track);
             this.props.playTrack();
         }

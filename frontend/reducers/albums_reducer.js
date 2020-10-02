@@ -3,7 +3,7 @@ import {RECEIVE_ALBUM, RECEIVE_ALBUMS, CLEAR_ALBUMS} from '../actions/album_acti
 const albumsReducer = (state = {}, action) => {
     //debugger
     switch(action.type) {
-        case RECEIVE_ALBUMS: 
+        case RECEIVE_ALBUMS:
             return action.albums;
         case CLEAR_ALBUMS:
             return {};
