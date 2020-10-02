@@ -115,7 +115,7 @@ class LoginForm extends React.Component {
         
         return(
         <div className ='login-page'>
-                <div className="login-banner">
+                {/* <div className="login-banner">
                         
                         <Link to="/" className="login-header">
                         
@@ -123,7 +123,7 @@ class LoginForm extends React.Component {
                         <p className="login-banner-text">RecordPress</p>
                       
                         </Link>
-                </div>
+                </div> */}
                 <div className="login-form-wrap">
                     <div className="login-form-main">
                              <h2>Log In</h2>

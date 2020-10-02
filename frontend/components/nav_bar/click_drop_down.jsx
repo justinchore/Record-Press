@@ -9,25 +9,25 @@ class ClickDropDown extends React.Component {
             show: false
         }
 
-        this.handleBlur = this.handleBlur.bind(this);
+        // this.handleBlur = this.handleBlur.bind(this);
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleBlur(e) {
-        this.setState({show: false}); 
-    }
+    // handleBlur(e) {
+    //     this.setState({show: false}); 
+    // }
 
     handleClick(){
         this.setState({show: !this.state.show})
     }
-
+    
     render() {
+        // debugger 
         return(
             <div className="drpdown">
                 <button style={{position: 'relative'}} 
-                onBlur={this.handleBlur}
+                // onBlur={this.handleBlur}
                 onClick={this.handleClick}
-
                     className="dropbtn">♪
                      
                 {this.state.show ? (
@@ -36,7 +36,9 @@ class ClickDropDown extends React.Component {
                         id="dropdown-items">
                          <div className="dropdown-list-item-first">
                         <li className= "dropdown-username">
-                            <Link to={`/users/${this.props.currentUser.id}`}>{this.props.currentUser.username}</Link>
+                                    <Link to={`/users/${this.props.currentUser.id}`} onClick={this.handleClick}>
+                                        {this.props.currentUser.username}
+                                    </Link>
                         </li>
                         <li className= "dropdown-first-footer">
                             view site

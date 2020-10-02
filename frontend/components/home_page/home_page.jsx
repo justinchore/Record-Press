@@ -5,10 +5,15 @@ class HomePage extends React.Component {
     
     constructor(props) {
         super(props)
+
+        this.state = { 
+            loaded: false,
+        }
     }
 
     componentDidMount() {
-        const albs = this.props.fetchAlbums(); 
+        const albs = this.props.fetchAlbums();
+        Promise.all([albs]).then(() => this.setState({loaded: true})); 
     }
 
     componentWillUnmount() {
@@ -35,8 +40,11 @@ class HomePage extends React.Component {
     }
     
     render() {
-        const albumArr = Object.values(this.props.albums)
-        if (albumArr.length === 0 ) return null
+        // const albumArr = Object.values(this.props.albums)
+        // if (albumArr.length === 0 ) return null
+        if (this.state.loaded) {
+            const albumArr = Object.values(this.props.albums)
+
         return (
             <div className="home-page-wrapper">
                 <FeaturedAlbums albumArr = {albumArr}/>
@@ -56,6 +64,11 @@ class HomePage extends React.Component {
             </div>
             
         )
+        } else {
+            return (
+                <div></div>
+            )
+        }
     }
 }
 

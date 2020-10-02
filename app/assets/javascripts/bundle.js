@@ -1132,15 +1132,28 @@ var HomePage = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(HomePage);
 
   function HomePage(props) {
+    var _this;
+
     _classCallCheck(this, HomePage);
 
-    return _super.call(this, props);
+    _this = _super.call(this, props);
+    _this.state = {
+      loaded: false
+    };
+    return _this;
   }
 
   _createClass(HomePage, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      var _this2 = this;
+
       var albs = this.props.fetchAlbums();
+      Promise.all([albs]).then(function () {
+        return _this2.setState({
+          loaded: true
+        });
+      });
     }
   }, {
     key: "componentWillUnmount",
@@ -1173,25 +1186,30 @@ var HomePage = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var albumArr = Object.values(this.props.albums);
-      if (albumArr.length === 0) return null;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "home-page-wrapper"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_featured_albums_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        albumArr: albumArr
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "home-page-mid-banner"
-      }, "-- Find a song that ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "bold-in-banner"
-      }, "moves"), " you --"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "new-and-notable-container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "n-n-clear"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "new and notable")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "n-n-clear"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "n-n-list"
-      }, this.newAndNotableList(albumArr)))));
+      // const albumArr = Object.values(this.props.albums)
+      // if (albumArr.length === 0 ) return null
+      if (this.state.loaded) {
+        var albumArr = Object.values(this.props.albums);
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "home-page-wrapper"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_featured_albums_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          albumArr: albumArr
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "home-page-mid-banner"
+        }, "-- Find a song that ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "bold-in-banner"
+        }, "moves"), " you --"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "new-and-notable-container"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "n-n-clear"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "new and notable")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "n-n-clear"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+          className: "n-n-list"
+        }, this.newAndNotableList(albumArr)))));
+      } else {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+      }
     }
   }]);
 
@@ -1359,20 +1377,16 @@ var ClickDropDown = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this, props);
     _this.state = {
       show: false
-    };
-    _this.handleBlur = _this.handleBlur.bind(_assertThisInitialized(_this));
+    }; // this.handleBlur = this.handleBlur.bind(this);
+
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     return _this;
-  }
+  } // handleBlur(e) {
+  //     this.setState({show: false}); 
+  // }
+
 
   _createClass(ClickDropDown, [{
-    key: "handleBlur",
-    value: function handleBlur(e) {
-      this.setState({
-        show: false
-      });
-    }
-  }, {
     key: "handleClick",
     value: function handleClick() {
       this.setState({
@@ -1382,13 +1396,14 @@ var ClickDropDown = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      // debugger 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "drpdown"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         style: {
           position: 'relative'
-        },
-        onBlur: this.handleBlur,
+        } // onBlur={this.handleBlur}
+        ,
         onClick: this.handleClick,
         className: "dropbtn"
       }, "\u266A", this.state.show ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
@@ -1406,7 +1421,8 @@ var ClickDropDown = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "dropdown-username"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/users/".concat(this.props.currentUser.id)
+        to: "/users/".concat(this.props.currentUser.id),
+        onClick: this.handleClick
       }, this.props.currentUser.username)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "dropdown-first-footer"
       }, "view site"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1448,7 +1464,6 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(_ref) {
   var session = _ref.session,
       users = _ref.entities.users;
-  // debugger
   return {
     currentUser: users[session.id]
   };
@@ -1496,7 +1511,8 @@ var HomeBar = function HomeBar(_ref) {
       className: "guest-home-grid-container"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "guest-homebar-logo-container"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/",
       className: "home-header-parallelogram"
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
       className: "homebar-sitename"
@@ -1889,15 +1905,6 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-page"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "login-banner"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/",
-        className: "login-header"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "login-banner-image"
-      }, "\u25B0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "login-banner-text"
-      }, "RecordPress"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-form-wrap"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-form-main"

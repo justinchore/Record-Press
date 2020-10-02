@@ -9,8 +9,10 @@ const HomeBar = ({ currentUser, logout, openModal }) => {
         return (
             <div className= "outer-home-header-div">
             <div className="guest-home-grid-container">
+                
                 <div className="guest-homebar-logo-container">
-                    <p className="home-header-parallelogram"></p>
+                    
+                    <Link to="/" className="home-header-parallelogram"></Link>
                     <p className="homebar-sitename">RecordPress</p>
                     <div className="home-message-wrapper">
                         <p className="home-message">Discover amazing new music and <a className="cool-text">directly support</a> the artists who make it.</p>

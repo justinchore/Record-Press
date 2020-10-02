@@ -104,8 +104,8 @@ ActiveRecord::Base.transaction do
      album2 = Album.create(title: "Time to Fly", artist_id: user3.id, downloadable: true, genre_id: pop.id)
      album3 = Album.create(title: "Straight No Chaser", artist_id: user3.id, downloadable: true, genre_id: pop.id)
      album4 = Album.create(title: "Tomorrow is a Long Time", artist_id: user4.id, downloadable: true, genre_id: folk.id)
-     album5 = Album.create(title: "Freewheeling", artist_id: user5.id, downloadable: true, genre_id: folk.id)
-     album6 = Album.create(title: "Florence Place", artist_id: user6.id, downloadable: true, genre_id: alternative.id)
+     album5 = Album.create(title: "Freewheeling", artist_id: user4.id, downloadable: true, genre_id: folk.id)
+     album6 = Album.create(title: "Florence Place", artist_id: user5.id, downloadable: true, genre_id: alternative.id)
      
      album1.album_artwork.attach(io:img_file10, filename:"city.jpg")
      album2.album_artwork.attach(io:img_file11, filename:"foggy_lake.jpg")
