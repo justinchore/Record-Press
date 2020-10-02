@@ -12,7 +12,7 @@ class TrackPlayer extends React.Component {
     componentDidMount() {
         // debugger
         if (Object.keys(this.props.currentlyPlaying).length === 0) {
-            debugger
+            // debugger
             this.props.trackSet(this.props.tracksObj[0]);
         }
     }
