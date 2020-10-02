@@ -2,7 +2,7 @@ class User < ApplicationRecord
     validates :username, :password_digest, :session_token, :email, presence: true
     validates :email, :username, uniqueness: true
 
-    validate :artist_no_zeros 
+    # validate :artist_no_zeros 
 
     validates :password, length: { minimum: 6 }, allow_nil: true 
 
@@ -73,10 +73,10 @@ class User < ApplicationRecord
 
     private 
 
-      def artist_no_zeros 
-        if is_artist && genre_id === 1 
-            errors.add(:genre_id, 'must be selected')
-        end
-    end
+    #   def artist_no_zeros 
+    #     if is_artist && genre_id === 1 
+    #         errors.add(:genre_id, 'must be selected')
+    #     end
+    # end
 
 end
