@@ -103,7 +103,7 @@ class ArtistPage extends React.Component {
 
                     
                 ))
-                debugger 
+                // debugger 
                  return(
                      <div className="full-artist-background">
                      <div className="main-artist-page-container">

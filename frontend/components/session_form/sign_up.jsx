@@ -20,11 +20,17 @@ class SignupForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this); 
         this.renderErrors = this.renderErrors.bind(this);
         this.demoUser = this.demoUser.bind(this);
+        // this.handleClick = this.handleClick(this); 
+    
         // this.updateGenre = this.updateGenre.bind(this);
         // this.artistFields = this.artistFields.bind(this); 
         // this.changeForm = this.changeForm.bind(this); 
         // this.formHeader = this.formHeader.bind(this);
     }
+
+    // handleClick() {
+    //     this.props.closeModal(); 
+    // }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -135,7 +141,7 @@ class SignupForm extends React.Component {
         return (
         <div className="signup-window-container">
                   {formHeader.text}
-                  <a onClick = {this.props.closeModal} className="close-form">
+                  <a onClick = {this.props.closeModal()} className="close-form">
                       <span className="close-modal">X</span>
                   </a>
            
@@ -177,7 +183,7 @@ class SignupForm extends React.Component {
                     <div className='signup-footer'>
                 <p>Already have an account? Log in { this.props.otherForm }</p>
                 <button className="demo-user-button"onClick={this.demoUser}>demo user</button>
-                {this.renderErrors()}
+                {/* {this.renderErrors()} */}
                 </div>
             </div>
     </div>

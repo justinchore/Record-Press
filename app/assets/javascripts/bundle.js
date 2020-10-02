@@ -631,8 +631,8 @@ var ArtistPage = /*#__PURE__*/function (_React$Component) {
             className: "discog-image",
             src: release.picUrl
           })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, release.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, _this2.make_half_dates(release.created_at))));
-        });
-        debugger;
+        }); // debugger 
+
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "full-artist-background"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2095,13 +2095,17 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
     _this.toggleIsArtist = _this.toggleIsArtist.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.renderErrors = _this.renderErrors.bind(_assertThisInitialized(_this));
-    _this.demoUser = _this.demoUser.bind(_assertThisInitialized(_this)); // this.updateGenre = this.updateGenre.bind(this);
+    _this.demoUser = _this.demoUser.bind(_assertThisInitialized(_this)); // this.handleClick = this.handleClick(this); 
+    // this.updateGenre = this.updateGenre.bind(this);
     // this.artistFields = this.artistFields.bind(this); 
     // this.changeForm = this.changeForm.bind(this); 
     // this.formHeader = this.formHeader.bind(this);
 
     return _this;
-  }
+  } // handleClick() {
+  //     this.props.closeModal(); 
+  // }
+
 
   _createClass(SignupForm, [{
     key: "handleSubmit",
@@ -2243,7 +2247,7 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-window-container"
       }, formHeader.text, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        onClick: this.props.closeModal,
+        onClick: this.props.closeModal(),
         className: "close-form"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "close-modal"
@@ -2283,7 +2287,7 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Already have an account? Log in ", this.props.otherForm), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "demo-user-button",
         onClick: this.demoUser
-      }, "demo user"), this.renderErrors())));
+      }, "demo user"))));
     }
   }]);
 
@@ -2712,7 +2716,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
   var action = arguments.length > 1 ? arguments[1] : undefined;
-  debugger;
+  // /debugger
   Object.freeze(state);
 
   switch (action.type) {
