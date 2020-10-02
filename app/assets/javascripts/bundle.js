@@ -2247,7 +2247,7 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-window-container"
       }, formHeader.text, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        onClick: this.props.closeModal(),
+        onClick: this.props.closeModal,
         className: "close-form"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "close-modal"

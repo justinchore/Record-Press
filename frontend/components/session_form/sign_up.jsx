@@ -141,7 +141,7 @@ class SignupForm extends React.Component {
         return (
         <div className="signup-window-container">
                   {formHeader.text}
-                  <a onClick = {this.props.closeModal()} className="close-form">
+                  <a onClick = {this.props.closeModal} className="close-form">
                       <span className="close-modal">X</span>
                   </a>
            
