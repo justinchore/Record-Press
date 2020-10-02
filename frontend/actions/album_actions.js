@@ -10,7 +10,7 @@ export const receiveAlbum = album => ({
 })
 
 export const receiveAlbums = albums => {
-    debugger 
+    // debugger 
     return {
     type: RECEIVE_ALBUMS,
     albums
@@ -24,10 +24,10 @@ export const clearAlbums = () => {
 }
 
 export const fetchArtistsAlbums = artistId => dispatch => {
-    debugger
+    // debugger
     return AlbumUtil.fetchArtistsAlbums(artistId)
     .then(albums => {
-        debugger
+        // debugger
         dispatch(receiveAlbums(albums))
 })}
 

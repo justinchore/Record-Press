@@ -8,7 +8,7 @@ export const fetchAlbums = () => {
 }
 
 export const fetchArtistsAlbums = (userId) => {
-    debugger
+    // debugger
     return $.ajax({
         method: 'GET',
         url: '/api/albums',

@@ -25,9 +25,7 @@ class Api::AlbumsController < ApplicationController
     end
 
     def index 
-        debugger
         if params[:userId] 
-            debugger
             @albums = Album.where(artist_id: params[:userId])
             render "api/albums/index"
         else 

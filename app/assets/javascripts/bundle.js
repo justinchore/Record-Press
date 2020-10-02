@@ -115,7 +115,7 @@ var receiveAlbum = function receiveAlbum(album) {
   };
 };
 var receiveAlbums = function receiveAlbums(albums) {
-  debugger;
+  // debugger 
   return {
     type: RECEIVE_ALBUMS,
     albums: albums
@@ -128,9 +128,9 @@ var clearAlbums = function clearAlbums() {
 };
 var fetchArtistsAlbums = function fetchArtistsAlbums(artistId) {
   return function (dispatch) {
-    debugger;
+    // debugger
     return _util_album_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchArtistsAlbums"](artistId).then(function (albums) {
-      debugger;
+      // debugger
       dispatch(receiveAlbums(albums));
     });
   };
@@ -3002,7 +3002,7 @@ var fetchAlbums = function fetchAlbums() {
   });
 };
 var fetchArtistsAlbums = function fetchArtistsAlbums(userId) {
-  debugger;
+  // debugger
   return $.ajax({
     method: 'GET',
     url: '/api/albums',
