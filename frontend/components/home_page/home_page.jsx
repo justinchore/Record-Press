@@ -1,5 +1,6 @@
 import React from 'react';
 import FeaturedAlbums from "./featured_albums_container"; 
+import { Link } from 'react-router-dom';
 
 class HomePage extends React.Component {
     
@@ -24,7 +25,7 @@ class HomePage extends React.Component {
        return albumArr.slice(1).map(album => (
              
                 <li key={album.created_at} className="n-n-item">
-                    <div className='n-n-item-inner'>
+                    <Link to= {`/users/${album.artist_id}`} className='n-n-item-inner'>
                          <div className="inner2-item">
                         <img className="n-n-artwork" src={album.picUrl} />
                         <div className="n-n-release-info">
@@ -33,7 +34,7 @@ class HomePage extends React.Component {
                             <p className="n-n-album-artist">{album.artist_name}</p>
                        </div>
                          </div>
-                    </div>
+                    </Link>
                 </li>
             )
         )

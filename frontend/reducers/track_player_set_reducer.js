@@ -1,10 +1,10 @@
-import { SET_TRACK } from '../actions/track_player_actions';
+import { TRACK_SET } from '../actions/track_player_actions';
 
 const trackPlayerSetReducer = (state = {}, action) => {
-    //debugger
+    // debugger
     switch (action.type) {
-        case SET_TRACK:
-            return Object.assign({}, state, action.track);
+        case TRACK_SET:
+            return action.track;
         default:
             return state;
     }

@@ -4,7 +4,7 @@ import Tracks from './tracks';
 import { trackSet, playTrack, pauseTrack } from '../../actions/track_player_actions';
 
 const mapStateToProps = (state) => {
-    // debugger
+    debugger
     return {
     currentlyPlaying: state.ui.currentTrack,
     isPlaying: state.ui.isPlaying.playing,

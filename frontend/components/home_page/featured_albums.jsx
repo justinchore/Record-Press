@@ -37,28 +37,29 @@ class FeaturedAlbums extends React.Component {
                         
                             <li className="sub-album1">
                                 
-                                <div className="sub-feature-wrap"
+                               
+                                <Link to ={`/users/${subAlbum1.artist_id}`} className="sub-feature-wrap"
                                     style={this.getImage(subAlbum1)}>
                                         <p className="sub-feature-title-text">{subAlbum1.title}</p>
                                         <p className="sub-feature-artist-text">{subAlbum1.artist_name}</p>
                                         
-                                </div>
+                                </Link>
                             </li>
                             <li className="sub-album2">
-                                <div className="sub-feature-wrap"
+                                <Link to={`/users/${subAlbum2.artist_id}`} className="sub-feature-wrap"
                                     style={this.getImage(subAlbum2)}>
                                         <p className="sub-feature-title-text">{subAlbum2.title}</p>
                                         <p className="sub-feature-artist-text">{subAlbum2.artist_name}</p>
                                     
-                                </div>
+                                </Link>
                             </li>
                             <li className="sub-album3">
-                                <div className="sub-feature-wrap"
+                                    <Link to={`/users/${subAlbum3.artist_id}`} className="sub-feature-wrap"
                                     style={this.getImage(subAlbum3)}>
                                         <p className="sub-feature-title-text">{subAlbum3.title}</p>
                                         <p className="sub-feature-artist-text">{subAlbum3.artist_name}</p>
                                     
-                                </div>
+                                </Link>
                             </li>
                
                         </ul>

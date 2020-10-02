@@ -1,6 +1,6 @@
 export const PAUSE = "PAUSE"
 export const PLAY = "PLAY"
-export const SET_TRACK = 'SET_TRACK';
+export const TRACK_SET = 'TRACK_SET';
 
 export const playTrack = () => {
     return {

@@ -5,9 +5,9 @@ import TrackPlayer from './track_player';
 
 
 const mapStateToProps = (state) => {
-    // debugger
+    debugger
     return {
-       tracksObj: Object.values(state.entities.tracks),
+        tracksObj: Object.values(state.entities.albums)[0].tracks,
        isPlaying: state.ui.isPlaying.playing,
        currentlyPlaying: state.ui.currentTrack
     }

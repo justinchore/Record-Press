@@ -9,40 +9,42 @@ class Tracks extends React.Component {
     }
 
     toggleIcon() {
-          if (this.props.isPlaying && this.props.currentTrack.id === this.props.track.id) {
+        //    if (this.props.isPlaying && this.props.currentTrack.id === this.props.track.id) {
               return <i className="fas fa-play" />
-        } else {
-              return <i className="fas fa-pause" />
-        }
+        //  } else {
+            //    return <i className="fas fa-pause" />
+         
     }
 
     changeTrack(e) {
         e.preventDefault();
-        if (this.props.currentlyPlaying.id !== this.props.track.id) {
-            if (this.props.isPlaying !== true) {
-                this.props.playTrack();
-            } else {
+        debugger
+        if (this.props.currentlyPlaying.id === this.props.track.id) {
+            debugger
+            if (this.props.isPlaying === true) {
+                 debugger
                 this.props.pauseTrack();
+            } else {
+                debugger
+                this.props.playTrack();
             }
         } else {
+            debugger
             this.props.trackSet(this.props.track);
-            this.props.setPlay();
+            this.props.playTrack();
         }
-
     }
 
     render() {
         const track = this.props.track
-
         return(
             <li className="<div artist-track-items">
                 <div className="track-inner-wrap">
-                    <span>
-                        {/* // className="play-pause-button-container">
-                        // {/* // onClick={this.changeTrack}> */}
-                        {/* // {this.toggleIcon()} */}
-                        <div className="track-play-button"><i className="fas fa-play"></i></div>
-
+                    <span
+                        className="track-play-button"
+                        onClick={this.changeTrack}>
+                        {this.toggleIcon()}
+    
                     </span>
                     <span className='track-text'>
                         {track.track_number}.&nbsp;
